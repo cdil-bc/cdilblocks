@@ -78,17 +78,17 @@
 				{
 					"name": "Primary",
 					"slug": "primary",
-					"color": "#990099"
+					"color": "#003957"
 				},
 				{
 					"name": "Secondary",
 					"slug": "secondary",
-					"color": "#0099ff"
+					"color": "#0d5e93"
 				},
 				{
 					"name": "Tertiary",
 					"slug": "tertiary",
-					"color": "#00cccc"
+					"color": "#726158"
 				},
 				{
 					"name": "Main",
@@ -104,7 +104,38 @@
 					"name": "Yellow",
 					"slug": "yellow",
 					"color": "#dccaa0"
+				},
+				{
+					"name": "Light Gray",
+					"slug": "light-gray",
+					"color": "#edefef"
+				},
+				{
+					"name": "Light Warm Gray",
+					"slug": "light-warm-gray",
+					"color": "#dfddcf"
+				},
+				{
+					"name": "Danger",
+					"slug": "danger",
+					"color": "#B65955"
+				},
+				{
+					"name": "Warning",
+					"slug": "warning",
+					"color": "#EAD0B7"
 				}
+				,{
+					"name": "Success",
+					"slug": "success",
+					"color": "#D8DCCA"
+				}, 
+				{
+					"name": "Info",
+					"slug": "Info",
+					"color": "#D1DCE0"
+				} 
+
 			]
 		},
 		"custom": {
@@ -143,7 +174,7 @@
 				{
 					"fontFamily": "\"Inter\", sans-serif",
 					"name": "Inter",
-					"slug": "inter"
+					"slug": "primary"
 				},
 				{
 					"fontFamily": "monospace",

@@ -1,5 +1,5 @@
 /*
-Theme Name: CDIL-Frost V2
+Theme Name: CDIL Blocks
 Theme URI: https://frostwp.com/
 Author: Tim Lindgren, Originally WP Engine
 Author URI: https://bc.edu/cdil
@@ -850,14 +850,16 @@ body.single-knowledgebase #header [data-row*='bottom']
 	padding-left:1rem !important
 }
 
-
-
 #epkb-sidebar-container-v2 .epkb-sidebar__cat-container li .active .article_active_bold span {
     font-weight: normal;
 }
 
 #eckb-article-left-sidebar .eckb-article-title__icon.ep_font_icon_document {
 	display:none;
+}
+
+.epkb-sidebar--reset span { /* links to articles */
+	line-height: 1.5 !important
 }
 
 .eckb-article-toc {
@@ -872,14 +874,21 @@ body.single-knowledgebase #header [data-row*='bottom']
 }
 
 #eckb-article-body .eckb-article-toc ul a.active {
-	background-color: #ddd !important;
-	color:#000 !important;
-
+	color: #000 !important;
+    background: none !important;
+    border-left: 2px solid #000;
+    font-weight: bold;
+    display: block !important;
+    border-radius: 0 !important;
+    padding-left: 0.5rem !important;
+    margin-left: 0.75rem;
 }
 
 #eckb-article-left-sidebar .epkb-sidebar__cat__top-cat__body-container .epkb-articles .active {
-	border-radius:3px; 
-	padding-left: .5rem !important
+	background: none !important;
+	padding-left: .5rem !important;
+	border-left: 1px solid #000;
+    margin-left: 0.25rem !important;
 }
 
 .eckb-navigation-button, .eckb-navigation-back  {
@@ -917,6 +926,14 @@ section.epkb-top-category-box {
 }
 
 /* Site Header */
-header.wp-block-template-part a {
+.back-to-cdil-site a {
 	text-decoration: none;
+}
+
+/* Lists */
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	margin-block-end: 1rem;
 }
