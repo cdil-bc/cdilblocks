@@ -412,13 +412,17 @@ ul {
 	font-weight:bold;
 }
 
-.w4pl ul {
+.home .case-study-list {
 	list-style:none;
-	padding:0;
+	padding-left:0;
 }
 
-.w4pl ul li {
+.home .case-study-list li {
     margin-bottom: 1rem;
+	padding-inline-start: 0;
+}
+
+.home .case-study-list a {
 	font-weight:bold;
 }
 
