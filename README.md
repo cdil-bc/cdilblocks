@@ -1,40 +1,38 @@
-# CDIL Frost
+# Extendable
 
-An experimental block theme for designers, developers, and creators.
+Extendable is a distinct, dynamic block theme designed as a canvas for your next online venture. Sporting multiple style variations, Extendable is the most expressive block theme yet. Go fresh, bold, bohemaian or minimal — with a single click.
 
-![Frost for WordPress](https://user-images.githubusercontent.com/4832319/147150948-25dfe270-e281-46ca-94af-f1dd94716760.jpg)
+## Getting Started
 
-## About
+To get started with development:
 
-Frost is a Full Site Editing theme for WordPress that extends the incredible power of the editor, enables builders to create amazing sites with little effort, and elevates the potential for freelancers and entrepreneurs. See the Frost theme in action at [frostwp.com](https://frostwp.com/).
-
-Download the latest stable release: [frost-0.9.6.zip](https://github.com/wpengine/frost/releases/download/v0.9.6/frost-0.9.6.zip)
+1. Set up a WordPress instance, we recommend [wp-env](https://developer.wordpress.org/block-editor/handbook/tutorials/devenv/) or [Local](https://localwp.com/) as an alternative to docker.
+2. Clone / download this repository into your `/wp-content/themes/` directory
 
 ## Requirements
 
-- Gutenberg plugin (latest)
 - WordPress 6.0+
 - PHP 5.6+
 - License: [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html) or later
 
-## Getting Started
+To optionally run tests locally, you will also need:
 
-You can download the latest stable release of Frost using the link above. Alternatively, install the entire repository for development purposes:
+- [Node.js](https://nodejs.org/en/)
+- [Composer](https://getcomposer.org/)
 
-1. Set up a local WordPress development environment, we recommend using [Local](https://localwp.com/).
-2. Ensure you are using WordPress 6.0+ with the [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/) active.
-3. Clone / download this repository into the `/wp-content/themes/` directory of your new WordPress instance.
-4. In the WordPress admin, use the Appearance > Themes screen to activate Frost.
+You can install the test-specific development dependencies by running `npm i && composer install`. The following test commands are then available:
 
-**Coding Standards**
-
-Frost adheres to the [WordPress coding standards](https://developer.wordpress.org/coding-standards/). To optionally test standards locally, you will need [Composer](https://getcomposer.org/) on your machine. Run `composer install` to install test-specific development dependencies. The following commands are available:
-
-- `composer run lint` Checks all PHP files for syntax errors
-- `composer run standards:check` Checks all PHP files for standards errors
-- `composer run standards:fix` Attempts to automatically fix all PHP standards errors
+- `npm run lint:css` lints and autofixes where possible the CSS
+- `composer run analyze [filename.php]` statically analyzes PHP for bugs
+- `composer run lint` checks PHP for syntax errors
+- `composer run standards:check` checks PHP for standards errors according to [WordPress coding standards](https://developer.wordpress.org/coding-standards/)
+- `composer run standards:fix` attempts to automatically fix errors
 
 ## Resources
 
-- [Frost website](https://frostwp.com/)
-- [Set up a development environment with Local](https://localwp.com/)
+- [Setting up a development environment](https://developer.wordpress.org/block-editor/handbook/tutorials/devenv/)
+- [Block Theme documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/block-theme-overview)
+- [Global Styles & theme.json documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/)
+- [The Ultimate Guide to WordPress Block Templates in Gutenberg](https://richtabor.com/gutenberg-block-templates/)
+- [A Primer on Full Site Editing for WordPress Theme Developers](https://richtabor.com/full-site-editing/)
+

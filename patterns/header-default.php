@@ -1,22 +1,28 @@
 <?php
 /**
- * Title: Header with site title, navigation.
- * Slug: frost/header-default
- * Categories: frost-header
- * Block Types: core/template-part/header
- * Viewport Width: 1280
+ * Title:       Header (Logo, Site Title, Navigation)
+ * Slug:        extendable/header-default
+ * Categories:  header
+ * blockTypes:  core/template-part/header
  */
-
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"30px","bottom":"30px"},"margin":{"top":"0px"}}},"layout":{"inherit":true}} -->
-<div class="wp-block-group alignfull" style="margin-top:0px;padding-top:30px;padding-bottom:30px">
-<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide">
-<!-- wp:site-title /-->
-<!-- wp:navigation {"isResponsive":true,"style":{"spacing":{"blockGap":"20px"}}} -->
-<!-- wp:page-list {"isNavigationChild":true,"showSubmenuIcon":true,"openSubmenusOnClick":false} /-->
-<!-- /wp:navigation -->
-</div>
+
+<!-- wp:group {"align":"full","layout":{"inherit":true},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap)","top":"var(--wp--style--block-gap)"}}}} -->
+<div class="wp-block-group alignfull" style="padding-bottom:var(--wp--style--block-gap);padding-top:var(--wp--style--block-gap)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:site-logo {"width":120} /-->
+
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:site-title /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
-</div>
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group">
+
+<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} -->
+<!-- wp:page-list {"isNavigationChild":true,"showSubmenuIcon":true,"openSubmenusOnClick":false} /-->
+<!-- /wp:navigation --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->

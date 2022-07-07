@@ -1,173 +1,146 @@
 <?php
 /**
- * This file adds functions to the Frost WordPress theme.
+ * Extendable functions and definitions
  *
- * @package CDIL-Frost
- * @author  CDIL
- * @license GNU General Public License v2 or later
- * @link    
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Extendable
+ * @since Extendable 1.0
  */
 
-if ( ! function_exists( 'frost_setup' ) ) {
+if ( ! function_exists( 'extendable_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 *
-	 * @since 0.8.0
+	 * @since Extendable 1.0
 	 *
 	 * @return void
 	 */
-	function frost_setup() {
+	function extendable_support() {
 
-		// Make theme available for translation.
-		load_theme_textdomain( 'frost', get_template_directory() . '/languages' );
-
-		// Add support for Block Styles.
+		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
 
-		// Enqueue editor styles and fonts.
-		add_editor_style(
+		// Enqueue editor styles.
+		add_editor_style( 'style.css' );
+
+		// Register WooCommerce theme features.
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		add_theme_support(
+			'woocommerce',
 			array(
-				'./style.css',
-				frost_fonts_url(),
+				'thumbnail_image_width' => 400,
+				'single_image_width'    => 600,
 			)
 		);
 
-		// Remove core block patterns.
-		remove_theme_support( 'core-block-patterns' );
-
-	}
-}
-add_action( 'after_setup_theme', 'frost_setup' );
-
-// Enqueue style sheet.
-add_action( 'wp_enqueue_scripts', 'frost_enqueue_style_sheet' );
-function frost_enqueue_style_sheet() {
-
-	wp_enqueue_style( 'frost', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-
-}
-
-// Enqueue fonts.
-add_action( 'wp_enqueue_scripts', 'frost_enqueue_fonts' );
-function frost_enqueue_fonts() {
-
-	wp_enqueue_style( 'frost-fonts', frost_fonts_url(), array(), null );
-
-}
-
-// Define fonts.
-function frost_fonts_url() {
-
-	// Allow child themes to disable to the default Frost fonts.
-	$dequeue_fonts = apply_filters( 'frost_dequeue_fonts', false );
-
-	if ( $dequeue_fonts ) {
-		return '';
 	}
 
-	$fonts = array(
-		'family=Inter:wght@100;200;300;400;500;600;700;800;900',
-	);
+endif;
 
-	// Make a single request for all Google Fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $fonts ) ) . '&display=swap' );
+add_action( 'after_setup_theme', 'extendable_support' );
 
-}
+if ( ! function_exists( 'extendable_styles' ) ) :
+
+	/**
+	 * Enqueue styles.
+	 *
+	 * @since Extendable 1.0
+	 *
+	 * @return void
+	 */
+	function extendable_styles() {
+
+		// Register theme stylesheet.
+		$theme_version = wp_get_theme()->get( 'Version' );
+
+		$version_string = is_string( $theme_version ) ? $theme_version : false;
+		wp_register_style(
+			'extendable-style',
+			get_template_directory_uri() . '/style.css',
+			array(),
+			$version_string
+		);
+
+		// Enqueue theme stylesheet.
+		wp_enqueue_style( 'extendable-style' );
+
+	}
+
+endif;
+
+add_action( 'wp_enqueue_scripts', 'extendable_styles' );
 
 /**
- * Register block styles.
+ * Registers pattern categories.
  *
- * @since 0.9.2
- */
-function frost_register_block_styles() {
-
-	$block_styles = array(
-		'core/button'          => array(
-			'fill-base'    => __( 'Fill Base', 'frost' ),
-			'outline-base' => __( 'Outline Base', 'frost' ),
-		),
-		'core/group'           => array(
-			'shadow'       => __( 'Shadow', 'frost' ),
-			'shadow-solid' => __( 'Shadow Solid', 'frost' ),
-			'full-height'     => __( 'Full-height', 'frost' ),
-		),
-		'core/image'           => array(
-			'shadow' => __( 'Shadow', 'frost' ),
-		),
-		'core/list'            => array(
-			'no-disc' => __( 'No Disc', 'frost' ),
-		),
-		'core/media-text'      => array(
-			'shadow-media' => __( 'Shadow', 'frost' ),
-		),
-		'core/navigation-link' => array(
-			'fill'         => __( 'Fill', 'frost' ),
-			'fill-base'    => __( 'Fill Base', 'frost' ),
-			'outline'      => __( 'Outline', 'frost' ),
-			'outline-base' => __( 'Outline Base', 'frost' ),
-		),
-		'core/pullquote'           => array(
-			'shadow'       => __( 'Shadow', 'frost' ),
-			'shadow-solid' => __( 'Shadow Solid', 'frost' ),
-		),
-	);
-
-	foreach ( $block_styles as $block => $styles ) {
-		foreach ( $styles as $style_name => $style_label ) {
-			register_block_style(
-				$block,
-				array(
-					'name'  => $style_name,
-					'label' => $style_label,
-				)
-			);
-		}
-	}
-}
-add_action( 'init', 'frost_register_block_styles' );
-
-/**
- * Registers block categories, and type.
+ * @since Extendable 1.0
  *
- * @since 0.9.2
+ * @return void
  */
-function frost_register_block_pattern_categories() {
-
-	/* Functionality specific to the Block Pattern Explorer plugin. */
-	if ( function_exists( 'register_block_pattern_category_type' ) ) {
-		register_block_pattern_category_type( 'frost', array( 'label' => __( 'Frost', 'frost' ) ) );
-	}
-
+function extendable_register_pattern_categories() {
 	$block_pattern_categories = array(
-		'frost-footer'  => array(
-			'label'         => __( 'Footer', 'frost' ),
-			'categoryTypes' => array( 'frost' ),
-		),
-		'frost-general' => array(
-			'label'         => __( 'General', 'frost' ),
-			'categoryTypes' => array( 'frost' ),
-		),
-		'frost-header'  => array(
-			'label'         => __( 'Header', 'frost' ),
-			'categoryTypes' => array( 'frost' ),
-		),
-		'frost-page'    => array(
-			'label'         => __( 'Page', 'frost' ),
-			'categoryTypes' => array( 'frost' ),
-		),
-		'frost-query'   => array(
-			'label'         => __( 'Query', 'frost' ),
-			'categoryTypes' => array( 'frost' ),
-		),
+		'header' => array( 'label' => __( 'Headers', 'extendable' ) ),
+		'footer' => array( 'label' => __( 'Footers', 'extendable' ) ),
 	);
+
+	/**
+	 * Filters the theme block pattern categories.
+	 *
+	 * @since Extendable 1.0
+	 *
+	 * @param array[] $block_pattern_categories {
+	 *     An associative array of block pattern categories, keyed by category name.
+	 *
+	 *     @type array[] $properties {
+	 *         An array of block category properties.
+	 *
+	 *         @type string $label A human-readable label for the pattern category.
+	 *     }
+	 * }
+	 */
+	$block_pattern_categories = apply_filters( 'extendable_block_pattern_categories', $block_pattern_categories );
 
 	foreach ( $block_pattern_categories as $name => $properties ) {
-		register_block_pattern_category( $name, $properties );
+		if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
+			register_block_pattern_category( $name, $properties );
+		}
 	}
+
 }
-add_action( 'init', 'frost_register_block_pattern_categories', 9 );
+add_action( 'init', 'extendable_register_pattern_categories', 9 );
+
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	// This theme does not have a traditional sidebar.
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+	/**
+	 * Alter the queue for WooCommerce styles and scripts.
+	 *
+	 * @since Extendable 1.0.5
+	 *
+	 * @param array $styles Array of registered styles.
+	 *
+	 * @return array
+	 */
+	function extendable_woocommerce_enqueue_styles( $styles ) {
+		// Get a theme version for cache busting.
+		$theme_version = wp_get_theme()->get( 'Version' );
+		$version_string = is_string( $theme_version ) ? $theme_version : false;
+
+		// Add Extendable's WooCommerce styles.
+		$styles['extendable-woocommerce'] = array(
+			'src'     => get_template_directory_uri() . '/assets/css/woocommerce.css',
+			'deps'    => '',
+			'version' => $version_string,
+			'media'   => 'all',
+			'has_rtl' => true,
+		);
+
+		return apply_filters( 'woocommerce_extendable_styles', $styles );
+	}
+	add_filter( 'woocommerce_enqueue_styles', 'extendable_woocommerce_enqueue_styles' );
+}
