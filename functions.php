@@ -100,6 +100,25 @@ function extendable_register_pattern_categories() {
 }
 
 
+function add_theme_scripts() {
+	
+	wp_enqueue_style( 'tocbot', get_template_directory_uri() . '/assets/toc/toc.css', array(), '1.1', 'all');
+	wp_enqueue_script('tocbot', get_stylesheet_directory_uri().'/assets/toc/tocbot.min.js', 
+    array(), false, true);
+	wp_enqueue_script('tocbot-init', get_stylesheet_directory_uri().'/assets/toc/tocbot-init.js', 
+    array(), false, true);
+
+	wp_enqueue_script('sticky-header', get_stylesheet_directory_uri().'/assets/sticky/sticky-header.js', 
+    array(), false, true);
+	
+	//   if ( is_singular() ) {
+	// 	wp_enqueue_script( 'comment-reply' );
+	//   }
+  }
+
+  
+  add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
 // full credit for this code goes to: https://jeroensormani.com/automatically-add-ids-to-your-headings/
 	function auto_id_headings( $content ) {
 
