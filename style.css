@@ -272,6 +272,26 @@ input {
 
 
 /* Site Header */
+
+header.wp-block-template-part {
+	position:sticky;
+	top:0;
+	z-index:2;
+}
+
+.admin-bar header.wp-block-template-part {
+	position:sticky;
+	top:30px;
+}
+
+header.wp-block-template-part.scrolled > div > div {
+	background-color: var(--wp--preset--color--primary) !important;
+	border-bottom: none !important;
+	transition: background-color 0.5s ease;
+	box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+
 .header-organization-link a,
 .wp-block-site-title a {
 	text-decoration: none;
@@ -344,6 +364,7 @@ ul {
  .resource-list .current_page_parent .children {
 	 display:block;
 	 border-left: 1px solid #444;
+	 margin-left: 0.25rem;
  }
  
  .resource-list li.current_page_parent,
@@ -407,6 +428,10 @@ ul {
 
 /* Homepage Lists */
 
+.home main{
+	margin-block-start: 0 !important
+}
+
 .wp-block-latest-posts__list li {
     margin-bottom: 1rem;
 	font-weight:bold;
@@ -440,7 +465,7 @@ ul {
 	text-decoration: underline;
 }
 
-.home .wp-block-column {
+.home-sections .wp-block-column {
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
@@ -464,4 +489,178 @@ ul {
 /*  */
 .justify-evenly {
 	justify-content: space-evenly;
+}
+
+
+/* Breadcrumbs */
+.breadcrumbs {
+	margin-block-start: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 2rem;
+	font-size: 1rem;
+	background: #eee
+}
+
+.breadcrumbs a {
+	text-decoration:none;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	
+	to {
+		opacity: 1;
+	}
+	}
+	
+	.fadeIn {
+	animation-name: fadeIn;
+	animation-duration: .5s;
+	}
+
+	@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	}
+	
+	.fadeInUp {
+	animation-name: fadeInUp;
+	animation-duration: 1s;
+	}
+
+	@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+	
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	}
+	
+	.fadeInDown {
+	animation-name: fadeInDown;
+	animation-duration: 1s;
+	}
+
+	@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
+}
+
+@keyframes fadeInLeft {
+	from {
+	  opacity: 0;
+	  transform: translate3d(-100%, 0, 0);
+	}
+  
+	to {
+	  opacity: 1;
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  .fadeInLeft {
+	animation-name: fadeInLeft;
+	animation-duration: .5s;
+  }
+
+  @keyframes fadeInRight {
+	from {
+	  opacity: 0;
+	  transform: translate3d(100%, 0, 0);
+	}
+  
+	to {
+	  opacity: 1;
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  .fadeInRight {
+	animation-name: fadeInRight;
+	animation-duration: .5s;
+  }
+  
+  @keyframes pulse {
+	from {
+	  transform: scale3d(1, 1, 1);
+	}
+  
+	50% {
+	  transform: scale3d(1.05, 1.05, 1.05);
+	}
+  
+	to {
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+  
+  .pulse {
+	animation-name: pulse;
+	animation-timing-function: ease-in-out;
+		animation-duration: .25s;
+  }
+
+/* Ulilities */
+
+.no-margin-block-start {
+	margin-block-start: calc(var(--wp--style--block-gap)) * -1 !important;
+}
+
+
+/* homepge fade-in */
+
+.hero-text {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.hero-subtitle {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.hero-button {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.wp-block-post-title,
+main h2  {
+	animation-name: fadeIn;
+    animation-duration: .75s;
+}
+
+.wp-block-site-logo, 
+header h1,
+.nav-block{
+	animation-name: fadeIn;
+    animation-duration: .75s;
 }

@@ -195,6 +195,11 @@
 					"color": "#D1DCE0",
 					"name": "Info",
 					"slug": "Info"
+				},
+				{
+					"color": "#8a100b",
+					"name": "BC Red",
+					"slug": "BC Red"
 				}
 			]
 		},
@@ -547,6 +552,16 @@
 		{
 			"name": "header",
 			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "header-minimal",
+			"title": "Header Minimal Layout",
+			"area": "header"
+		},
+		{
+			"name": "header-minimal-white",
+			"title": "Header Minimal - White",
 			"area": "header"
 		},
 		{
