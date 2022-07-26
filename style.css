@@ -272,24 +272,27 @@ input {
 
 /* Site Header */
 
-header.wp-block-template-part {
+.sticky-header{
 	position:sticky;
 	top:0;
 	z-index:2;
 }
 
-.admin-bar header.wp-block-template-part {
+.admin-bar .sticky-header{
 	position:sticky;
 	top:30px;
 }
 
-header.wp-block-template-part.scrolled > div > div {
+.sticky-header.scrolled > div > div {
 	background-color: var(--wp--preset--color--primary) !important;
 	border-bottom: none !important;
 	transition: background-color 0.5s ease;
 	box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
+.sticky-header.scrolled .hide-on-scroll {
+	display:none;
+}
 
 .header-organization-link a,
 .wp-block-site-title a {
