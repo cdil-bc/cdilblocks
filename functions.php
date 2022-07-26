@@ -1,23 +1,23 @@
 <?php
 /**
- * Extendable functions and definitions
+ * CDIL Blocks functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Extendable
- * @since Extendable 1.0
+ * @package CDIL Blocks
+ * @since CDIL Blocks 1.0
  */
 
-if ( ! function_exists( 'extendable_support' ) ) :
+if ( ! function_exists( 'cdilblocks_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Extendable 1.0
+	 * @since CDIL Blocks 1.0
 	 *
 	 * @return void
 	 */
-	function extendable_support() {
+	function cdilblocks_support() {
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
@@ -28,18 +28,18 @@ if ( ! function_exists( 'extendable_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'extendable_support' );
+add_action( 'after_setup_theme', 'cdilblocks_support' );
 
-if ( ! function_exists( 'extendable_styles' ) ) :
+if ( ! function_exists( 'cdilblocks_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Extendable 1.0
+	 * @since CDIL Blocks 1.0
 	 *
 	 * @return void
 	 */
-	function extendable_styles() {
+	function cdilblocks_styles() {
 
 		// Register theme stylesheet.
 		$theme_version = wp_get_theme()->get( 'Version' );
@@ -59,16 +59,16 @@ if ( ! function_exists( 'extendable_styles' ) ) :
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'extendable_styles' );
+add_action( 'wp_enqueue_scripts', 'cdilblocks_styles' );
 
 /**
  * Registers pattern categories.
  *
- * @since Extendable 1.0
+ * @since CDIL Blocks 1.0
  *
  * @return void
  */
-function extendable_register_pattern_categories() {
+function cdilblocks_register_pattern_categories() {
 	$block_pattern_categories = array(
 		'header' => array( 'label' => __( 'Headers', 'extendable' ) ),
 		'footer' => array( 'label' => __( 'Footers', 'extendable' ) ),
@@ -77,7 +77,7 @@ function extendable_register_pattern_categories() {
 	/**
 	 * Filters the theme block pattern categories.
 	 *
-	 * @since Extendable 1.0
+	 * @since CDIL Blocks 1.0
 	 *
 	 * @param array[] $block_pattern_categories {
 	 *     An associative array of block pattern categories, keyed by category name.
@@ -89,7 +89,7 @@ function extendable_register_pattern_categories() {
 	 *     }
 	 * }
 	 */
-	$block_pattern_categories = apply_filters( 'extendable_block_pattern_categories', $block_pattern_categories );
+	$block_pattern_categories = apply_filters( 'cdilblocks_block_pattern_categories', $block_pattern_categories );
 
 	foreach ( $block_pattern_categories as $name => $properties ) {
 		if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
@@ -115,8 +115,6 @@ function add_theme_scripts() {
 	// 	wp_enqueue_script( 'comment-reply' );
 	//   }
   }
-
-  
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 // full credit for this code goes to: https://jeroensormani.com/automatically-add-ids-to-your-headings/
