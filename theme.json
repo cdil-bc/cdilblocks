@@ -556,32 +556,12 @@
 		},
 		{
 			"name": "header-minimal",
-			"title": "Header Minimal Layout",
-			"area": "header"
-		},
-		{
-			"name": "header-minimal-white",
-			"title": "Header Minimal - White",
-			"area": "header"
-		},
-		{
-			"name": "header-title-nav-button",
-			"title": "Header with Button",
-			"area": "header"
-		},
-		{
-			"name": "header-title-social-nav",
-			"title": "Header with Social",
+			"title": "Header Minimal",
 			"area": "header"
 		},
 		{
 			"name": "footer",
 			"title": "Footer",
-			"area": "footer"
-		},
-		{
-			"name": "footer-logo-nav",
-			"title": "Footer with Logo and Navigation",
 			"area": "footer"
 		}
 	]
