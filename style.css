@@ -349,7 +349,7 @@ ul {
 
 /*Resource List */
 
-.resource-list {
+/* .resource-list {
 	list-style:none;
 	padding-inline-start: 0px;
  }
@@ -384,7 +384,107 @@ ul {
  
  .resource-list li:not(.current_page_item) {
 	 font-weight: normal;
+ } */
+
+ .resource-list {
+	list-style:none;
+	padding-inline-start: 0px;
+	font-size: var(--wp--preset--font-size--small);
  }
+
+ .resource-list a {
+	text-decoration: none;
+ }
+ 
+.resource-list ul,
+.resource-list li {
+	padding-inline-start:.5rem;
+	list-style:none;
+ }
+
+ /* Top-level list item */
+.resource-list > li{
+	padding-inline-start:0;
+	list-style:none;
+	font-weight:bold;
+ }
+
+ .resource-list > li > ul{
+	/* padding-inline-start:0; */
+ }
+
+ .resource-list > li li{
+	text-transform: none;
+	padding-inline-start:.5rem;
+	list-style:none;
+	font-weight:normal;
+ }
+
+ .resource-list > li li li{
+	font-weight:normal;
+	font-size: var(--wp--preset--font-size--small);
+	text-transform: none;
+ }
+
+ /* hide everything after the first two levels */
+.resource-list .page_item_has_children .children,
+.resource-list .current_page_ancestor .children {
+	display:none;
+}
+
+ .resource-list .current_page_item > .children,
+ .resource-list  .current_page_ancestor > .children {
+	 display:block;
+	 margin-left: 0.25rem;
+	 margin-block-end: 0rem;
+ }
+
+ .resource-list .current_page_ancestor .children li.current_page_item > a {
+	font-weight:bold;
+	color:#000;
+}
+
+ .resource-list li.current_page_parent {
+	display:block;	
+ }
+
+ .resource-list .children .current_page_item .children {
+	display:block;	
+	margin-block-end: 0rem;
+ }
+
+ /* Resources Section Page */
+
+.resource-template-resource-section .resource-list > li a{
+	display:none; 
+}
+
+.resource-template-resource-section .resource-list > li li a{
+   display:block; 
+}
+
+.resource-template-resource-section .resource-list .current_page_item .children .children,
+.resource-template-resource-section .resource-list .current_page_ancestor .children .children {
+	display:block;
+	margin-block-end: 0rem;
+}
+
+.resource-template-resource-section .resource-list .current_page_item > .children {
+   display:flex;
+   gap: var(--wp--custom--spacing--small);
+}
+
+.resource-template-resource-section .resource-list .current_page_item > .children > li {
+   border: 1px solid #ccc;
+   border-radius: .25rem;
+   padding: 2rem;
+
+}
+
+
+.resource-template-resource-section .resource-list > li li{
+   display:block;
+} 
  
  /* TOC */
  .lwptoc {
@@ -393,27 +493,33 @@ ul {
  }
 
 
- /* Next-Previous */
- .next-previous-nav {
-	display:flex;
-	justify-content: space-between;
-	text-align:center;
-	padding-block-start: 1rem;
-	border-top: 1px solid #444;
+/* Next-Previous */
+.next-previous-nav {
+	display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-block-start: 1rem;
+	padding-block-end: 1rem;
+	gap:.5rem;
  }
 
  .next-previous-nav > div {
 	padding-block-end: 1rem;
+	border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    padding: .75rem;
+    font-size: var(--wp--preset--font-size--small);
+	flex-grow: 1;
 }
 
 .next-previous-nav a {
 	text-decoration: none;
-	font-weight: bold;
 }
 
 .next-previous-nav .parent,
 .next-previous-nav .next {
-	margin-left:auto;
+	/* margin-left:auto; */
+
 }
 
 .next-previous-nav .previous {
@@ -458,6 +564,7 @@ ul {
 
 .home .case-study-list a {
 	font-weight:bold;
+	text-decoration: none;
 }
 
 .home .resource-list .page_item_has_children li {
@@ -471,17 +578,22 @@ ul {
 
 .home .resource-list a {
 	font-weight:bold;
-	text-decoration: underline;
+	text-decoration: none;
+	font-size: var(--wp--preset--font-size--medium);
 }
 
 .home-sections .wp-block-column {
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-/* Search Bar */
-.search-bar {
-	margin-block-start: calc(var( --wp--style--block-gap ) * -1) !important;
+.home .wp-block-latest-posts__post-title {
+	text-decoration: none;
 }
+
+/* Search Bar */
+/* .search-bar {
+	margin-block-start: calc(var( --wp--style--block-gap ) * -1) !important;
+} */
 
 .search-bar .wp-block-search__inside-wrapper {
 	background: var(--wp--preset--color--background);
