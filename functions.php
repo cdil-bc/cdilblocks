@@ -68,6 +68,7 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'cdilblocks_styles' );
 
+
 /**
  * Registers block categories, and type.
  *
@@ -110,6 +111,7 @@ function cdilblocks_register_block_pattern_categories() {
 add_action( 'init', 'cdilblocks_register_block_pattern_categories', 9 );
 
 
+// Enqueue Scripts and Styles
 function add_theme_scripts() {
 	
 	wp_enqueue_style( 'tocbot', get_template_directory_uri() . '/assets/toc/toc.css', array(), '1.1', 'all');
@@ -127,7 +129,9 @@ function add_theme_scripts() {
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-// full credit for this code goes to: https://jeroensormani.com/automatically-add-ids-to-your-headings/
+
+// Add ID to headings for TOC
+// Credits https://jeroensormani.com/automatically-add-ids-to-your-headings/
 	function auto_id_headings( $content ) {
 
 		$content = preg_replace_callback( '/(\<h[1-6](.*?))\>(.*)(<\/h[1-6]>)/i', function( $matches ) {
@@ -141,3 +145,23 @@ function add_theme_scripts() {
 	
 	}
 	add_filter( 'the_content', 'auto_id_headings' );
+
+
+// remove "Private: " from titles
+function remove_private_prefix($title) {
+	$title = str_replace('Private: ', '', $title);
+	return $title;
+}
+add_filter('the_title', 'remove_private_prefix');
+
+// Add "private" class to body for styling purposes
+add_filter( 'body_class', 'add_password_protected_body_class' );
+
+function add_password_protected_body_class( $classes ) {
+	global $post;
+	$id = $post->ID;
+	if ( get_post_status ( $ID ) == 'private' ) {
+	$classes[] = 'private';
+	return $classes;
+	}
+}
