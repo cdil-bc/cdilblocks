@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package CDIL Blocks
+ * @package cdilbocks
  * @since CDIL Blocks 1.0
  */
 
@@ -22,8 +22,15 @@ if ( ! function_exists( 'cdilblocks_support' ) ) :
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
 
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
+		
+
+		// Remove core block patterns.
+		remove_theme_support( 'core-block-patterns' );
 	}
 
 endif;
@@ -62,42 +69,45 @@ endif;
 add_action( 'wp_enqueue_scripts', 'cdilblocks_styles' );
 
 /**
- * Registers pattern categories.
+ * Registers block categories, and type.
  *
- * @since CDIL Blocks 1.0
- *
- * @return void
+ * @since 1.0
  */
-function cdilblocks_register_pattern_categories() {
-	$block_pattern_categories = array(
-		'header' => array( 'label' => __( 'Headers', 'extendable' ) ),
-		'footer' => array( 'label' => __( 'Footers', 'extendable' ) ),
-	);
+function cdilblocks_register_block_pattern_categories() {
 
-	/**
-	 * Filters the theme block pattern categories.
-	 *
-	 * @since CDIL Blocks 1.0
-	 *
-	 * @param array[] $block_pattern_categories {
-	 *     An associative array of block pattern categories, keyed by category name.
-	 *
-	 *     @type array[] $properties {
-	 *         An array of block category properties.
-	 *
-	 *         @type string $label A human-readable label for the pattern category.
-	 *     }
-	 * }
-	 */
-	$block_pattern_categories = apply_filters( 'cdilblocks_block_pattern_categories', $block_pattern_categories );
-
-	foreach ( $block_pattern_categories as $name => $properties ) {
-		if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
-			register_block_pattern_category( $name, $properties );
-		}
+	/* Functionality specific to the Block Pattern Explorer plugin. */
+	if ( function_exists( 'register_block_pattern_category_type' ) ) {
+		register_block_pattern_category_type( 'cdilblocks', array( 'label' => __( 'cdilblocks', 'cdilblocks' ) ) );
 	}
 
+	$block_pattern_categories = array(
+		'cdilblocks-footer'  => array(
+			'label'         => __( 'Footer', 'cdilblocks' ),
+			'categoryTypes' => array( 'cdilblocks' ),
+		),
+		'cdilblocks-general' => array(
+			'label'         => __( 'General', 'cdilblocks' ),
+			'categoryTypes' => array( 'cdilblocks' ),
+		),
+		'cdilblocks-header'  => array(
+			'label'         => __( 'Header', 'cdilblocks' ),
+			'categoryTypes' => array( 'cdilblocks' ),
+		),
+		'cdilblocks-casestudy'    => array(
+			'label'         => __( 'Case Studies', 'cdilblocks' ),
+			'categoryTypes' => array( 'cdilblocks' ),
+		),
+		'cdilblocks-query'   => array(
+			'label'         => __( 'Query', 'cdilblocks' ),
+			'categoryTypes' => array( 'cdilblocks' ),
+		),
+	);
+
+	foreach ( $block_pattern_categories as $name => $properties ) {
+		register_block_pattern_category( $name, $properties );
+	}
 }
+add_action( 'init', 'cdilblocks_register_block_pattern_categories', 9 );
 
 
 function add_theme_scripts() {

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title:    404 error content.
- * Slug:     extendable/hidden-404
+ * Slug:     cdilbocks/hidden-404
  * Inserter: false
  */
 ?>

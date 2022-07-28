@@ -20,6 +20,28 @@
 			]
 		},
 		{
+			"name": "resource-home",
+			"title": "Resources Home Page",
+			"postTypes": [
+				"resource"
+			]
+		},
+		{
+			"name": "resource-section",
+			"title": "Resource Section Page",
+			"postTypes": [
+				"resource"
+			]
+		},
+		{
+			"name": "resource-single-2",
+			"title": "Resource Page with Section Sidebar + Breadcrumbs",
+			"postTypes": [
+				"resource"
+			]
+		},
+		
+		{
 			"name": "single-case_study",
 			"title": "Single Case Study",
 			"postTypes": [

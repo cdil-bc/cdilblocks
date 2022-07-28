@@ -270,6 +270,13 @@ input {
 } */
 
 
+/* Editor */
+/* not sure whye the gap isn't the same in the editor - might cause problems later if gap is changed in theme.jaon */
+.wp-block-image {
+	margin: revert; 
+}
+
+
 /* Site Header */
 
 .sticky-header{
@@ -666,3 +673,5 @@ header h1,
 	animation-name: fadeIn;
     animation-duration: .75s;
 }
+
+

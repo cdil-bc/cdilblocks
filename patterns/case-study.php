@@ -1,10 +1,10 @@
 <?php
 /**
- * Title:       CDIL Footer
- * Slug:        cidlblocks/footer-default
- * Categories:  cdilblocks-footer
- * blockTypes:  core/template-part/footer
- */
+ * Title:       Case Study Template
+ * Slug:        cidblocks/casestudy
+ * Categories:  cdilblocks-casestudy
+ * postTypes: reresource
+ * blockTypes:  core/post-content
 ?>
 
 <!-- wp:group {"align":"full","layout":{"inherit":true},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap)","top":"var(--wp--style--block-gap)"}}}} -->
@@ -32,3 +32,47 @@
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+<?php
+/**
+ * Title:       Case Study
+ * Slug:        cidlblocks/casestudy
+ * Categories:  pages
+ * postTypes:   core/post-content
+ */
+?>
+
+<!-- wp:paragraph {"backgroundColor":"Info"} -->
+<p class="has-info-background-color has-background">[Succinct, easy to digest summary of the the case study]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1029,"sizeSlug":"full","linkDestination":"none","className":"is-style-editorskit-shadow"} -->
+<figure class="wp-block-image size-full is-style-editorskit-shadow"><img src="https://dev-cdil-resources.pantheonsite.io/wp-content/uploads/2022/07/placeholder.png" alt="" class="wp-image-1029"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2>Context</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Approach</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Outcomes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Resources</h2>
+<!-- /wp:heading -->
