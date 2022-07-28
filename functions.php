@@ -155,13 +155,10 @@ function remove_private_prefix($title) {
 add_filter('the_title', 'remove_private_prefix');
 
 // Add "private" class to body for styling purposes
-add_filter( 'body_class', 'add_password_protected_body_class' );
-
-function add_password_protected_body_class( $classes ) {
-	global $post;
-	$id = $post->ID;
-	if ( get_post_status ( $ID ) == 'private' ) {
-	$classes[] = 'private';
-	return $classes;
-	}
+add_filter( 'body_class', 'custom_class' );
+function custom_class( $classes ) {
+    if ( get_post_status() == 'private' ) {
+        $classes[] = 'private';
+    }
+    return $classes;
 }
