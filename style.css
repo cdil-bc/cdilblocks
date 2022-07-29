@@ -439,6 +439,11 @@ ul {
 	 margin-block-end: 0rem;
  }
 
+ .resource-list > li.current_page_item > a {
+	font-weight:bold;
+	color:#000;
+}
+
  .resource-list .current_page_ancestor .children li.current_page_item > a {
 	font-weight:bold;
 	color:#000;
@@ -786,4 +791,8 @@ header h1,
     animation-duration: .75s;
 }
 
+
+.wp-block-site-logo img {
+	max-width: 225px;
+}
 
