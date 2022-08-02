@@ -67,11 +67,11 @@ a:active {
 .wp-block-search__button,
 .wp-block-file .wp-block-file__button {
 	background-color: var(--wp--preset--color--primary);
-	border-radius: 0;
+	border-radius: .25rem;
 	border: none;
 	color: var(--wp--preset--color--background);
-	font-size: var(--wp--preset--font-size--medium);
-	padding: calc(.667em + 2px) calc(1.333em + 2px);
+	font-size: var(--wp--preset--font-size--base);
+	padding: .5rem;
 }
 
 /*
@@ -622,7 +622,8 @@ ul {
 }
 
 .home-sections .wp-block-column {
-	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	border-radius: .5rem;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .home .wp-block-latest-posts__post-title {
