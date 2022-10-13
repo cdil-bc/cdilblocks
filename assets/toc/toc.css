@@ -11,6 +11,10 @@
     font-size: .9rem;
 }
 
+.toc-header {
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 .toc {
     overflow-y: auto;
