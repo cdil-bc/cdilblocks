@@ -266,7 +266,7 @@
 		},
 		"layout": {
 			"contentSize": "40rem",
-			"wideSize": "76rem"
+			"wideSize": "80rem"
 		},
 		"spacing": {
 			"units": ["%", "px", "em", "rem", "ch", "vh", "vw"]
