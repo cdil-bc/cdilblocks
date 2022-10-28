@@ -174,46 +174,14 @@ input {
 
 /* CDIL Theme Customizations
 ---------------------------------------------------------------------------- */
-/* html {
-	--color1: var(--ast-global-color-0);
-	--color2: var(--ast-global-color-1);
-	--color3: var(--ast-global-color-2); 
+
+/* Utility Classes */
+
+.no-underline,
+.no-underline a {
+	text-decoration: none !important;
 }
 
-.text-decoration-none {
-	text-decoration: none !important
-}
-
-
-#page {
-	display:flex;
-	flex-direction:column;
-	min-height:100vh;
-}
-
-#colophon {
-	margin-top:auto;
-}
-
-.site-above-header-wrap figure.wp-block-image {
-	margin: .25rem 0 .5rem;
-}
-
-#nav_menu-5 a {
-	color:#fff;
-	text-transform:uppercase;
-	background:#972a26;
-	padding:.25rem .5rem;
-	border-radius:.25rem
-} */
-
-
-/* Editor */
-/* not sure whye the gap isn't the same in the editor - might cause problems later if gap is changed in theme.jaon */
-/* .wp-block-image {
-	margin: revert; 
-}
- */
 
 /* Site Header */
 
@@ -244,6 +212,38 @@ input {
 	text-decoration: none;
 }
 
+.wp-block-site-title:after {
+	content: "beta";
+    font-size: 1rem;
+    position: relative;
+    top: -1rem;
+    text-transform: uppercase;
+    left: 0.25rem;
+    color: #ccc;
+	background: #0d5e93;
+	padding: .25rem .5rem;
+	border-radius: .25rem;
+}
+
+/* Header Search  */
+
+header .wp-block-search__inside-wrapper {
+	background: #972a26;
+}
+
+header .wp-block-search__button {
+	padding:0;
+	background: none;
+}
+
+header .wp-block-search__input {
+	background: transparent;
+}
+
+header .wp-block-search__input::placeholder {
+	color:#ddd;
+}
+
 /* Lists */
 ol,
 ul {
@@ -251,6 +251,16 @@ ul {
 	/* padding: 0; */
 	margin-block-end: 1rem;
 }
+
+/* Image
+--------------------------------------------- */
+
+.wp-block-image.is-style-shadow-lg img {
+	border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+}
+
+
 
 /* Page List */
 
@@ -600,12 +610,17 @@ ul {
 	padding:0;
 }
 
-.breadcrumbs li:after {
-	content: "/";
+.breadcrumbs span.last-child {
+	display:none;
+}
+
+.breadcrumbs a:after {
+	content: ">";
 	padding-left: .5rem;
 }
 
-.breadcrumbs li:last-child:after {
+.breadcrumbs span:last-child a:after,
+.breadcrumbs span:nth-last-child(2) a:after {
 	content: "";
 }
 
@@ -614,9 +629,8 @@ ul {
 	text-decoration:none;
 }
 
-.breadcrumbs .bread-current {
-	color: #555;
-	font-weight:normal;
+.breadcrumbs [property="itemListElement"]:last-child {
+	display:none;
 }
 
 
