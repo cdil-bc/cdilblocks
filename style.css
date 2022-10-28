@@ -93,11 +93,23 @@ a:active {
  * --------------------------------------------------------
  */
 
-/* Table
-----------------------------------------------------------*/
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd){
-	background-color: var(--wp--custom--blocks--core-table--variant-stripes--color--background, var(--wp--preset--color--tertiary));
+
+ /* Image
+--------------------------------------------- */
+
+.wp-block-image.is-style-shadow-lg img {
+	border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
 }
+
+/* BLock/Paragraph?
+--------------------------------------------- */
+
+/* background: #fff5c1;
+box-shadow: 0px 1px 2px rgb(0 0 0 / 10%), 0px 1px 3px rgb(42 54 52 / 10%);
+border-radius: 0.25rem;
+ */
+
 
 /* Quote - 'Plain' variation
 ----------------------------------------------------------*/
@@ -112,70 +124,17 @@ blockquote:is(.is-style-plain) {
  * --------------------------------------------------------
  */
 
-/* Responsive menu animation and customization.
+
+
+/*
+ * --------------------------------------------------------
+ *  General
+ * --------------------------------------------------------
+ */
+
+
+ /* Utility Classes
 ----------------------------------------------------------*/
-@media (max-width: 599px) {
-	.wp-block-navigation__responsive-container {
-		display: block !important;
-		opacity: 0;
-		transform: translateX(200px);
-		transition: transform 170ms ease-in-out, opacity 150ms ease-in-out;
-		visibility: hidden;
-	}
-
-	.wp-block-navigation__responsive-container[aria-hidden="false"] {
-		opacity: 1;
-		transform: translateX(0);
-		visibility: visible;
-	}
-}
-
-/*
- * Remove all animations, transitions and smooth scroll
- * for people that prefer not to see them.
- */
-@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-}
-
-/*
- * Matching caret and focus outline colors.
- */
-input {
-	caret-color: var(--wp--preset--color--tertiary);
-	outline-color: var(--wp--preset--color--tertiary);
-	outline-offset: 0.2ch;
-}
-
-/*
- * Matching input with outline button style.
- */
-.wp-block-post-comments-form input:not([type=submit]),
-.wp-block-post-comments-form textarea {
-    border: 2px solid currentColor;
-    padding: 0.667em 1.333em !important;
-	font-size: 1.15rem;
-    line-height: 1.384;
-	border-radius: 0.5rem;
-}
-
-
-
-/* CDIL Theme Customizations
----------------------------------------------------------------------------- */
-
-/* Utility Classes */
 
 .no-underline,
 .no-underline a {
@@ -252,13 +211,6 @@ ul {
 	margin-block-end: 1rem;
 }
 
-/* Image
---------------------------------------------- */
-
-.wp-block-image.is-style-shadow-lg img {
-	border-radius: 0.75rem;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
-}
 
 
 
