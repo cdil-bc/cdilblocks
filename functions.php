@@ -118,7 +118,14 @@ function cdilblocks_register_block_styles() {
 
 	$block_styles = array(
 		'core/image'            => array(
-			'shadow-lg' => __( 'Shadow-large', 'cdilblocks' ),
+			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+		),
+		'core/group'            => array(
+			'shadow' => __( 'Shadow', 'cdilblocks' ),
+			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+		),
+		'core/embed'            => array(
+			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
 		),
 	);
 

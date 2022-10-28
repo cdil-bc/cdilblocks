@@ -187,6 +187,11 @@
 					"slug": "yellow"
 				},
 				{
+					"color": "#fff5c1",
+					"name": "Yellow-Light",
+					"slug": "yellow-light"
+				},
+				{
 					"color": "#edefef",
 					"name": "Light Gray",
 					"slug": "light-gray"
@@ -220,6 +225,11 @@
 					"color": "#8a100b",
 					"name": "BC Red",
 					"slug": "BC Red"
+				}, 
+				{
+					"color": "#501315",
+					"name": "BC Dark Red",
+					"slug": "BC Dark Red"
 				}
 			]
 		},
