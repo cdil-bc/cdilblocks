@@ -53,14 +53,14 @@ if ( ! function_exists( 'cdilblocks_styles' ) ) :
 
 		$version_string = is_string( $theme_version ) ? $theme_version : false;
 		wp_register_style(
-			'extendable-style',
+			'cdilblocks-style',
 			get_template_directory_uri() . '/style.css',
 			array(),
 			$version_string
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'extendable-style' );
+		wp_enqueue_style( 'cdilblocks-style' );
 
 	}
 
@@ -109,6 +109,32 @@ function cdilblocks_register_block_pattern_categories() {
 	}
 }
 add_action( 'init', 'cdilblocks_register_block_pattern_categories', 9 );
+
+
+/**
+ * Register block styles.
+ */
+function cdilblocks_register_block_styles() {
+
+	$block_styles = array(
+		'core/image'            => array(
+			'shadow-lg' => __( 'Shadow-large', 'cdilblocks' ),
+		),
+	);
+
+	foreach ( $block_styles as $block => $styles ) {
+		foreach ( $styles as $style_name => $style_label ) {
+			register_block_style(
+				$block,
+				array(
+					'name'  => $style_name,
+					'label' => $style_label,
+				)
+			);
+		}
+	}
+}
+add_action( 'init', 'cdilblocks_register_block_styles' );
 
 
 // Enqueue Scripts and Styles
@@ -162,3 +188,17 @@ function custom_class( $classes ) {
     }
     return $classes;
 }
+
+// Add Exerpts on Pages
+add_post_type_support( 'page', 'excerpt' );
+
+
+// Add Tags and Categories to Pages
+function page_tagcat_settings() {
+	// Add tag metabox to page
+	// register_taxonomy_for_object_type('post_tag', 'page');
+	// Add category metabox to page
+	register_taxonomy_for_object_type('category', 'page');
+	}
+	// Add to the admin_init hook of your theme functions.php file
+	add_action( 'init', 'page_tagcat_settings' );
