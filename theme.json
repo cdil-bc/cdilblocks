@@ -1,162 +1,147 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
 	"customTemplates": [
 		{
 			"name": "blank",
-			"title": "Blank",
-			"postTypes": ["page", "post"]
+			"postTypes": [
+				"page",
+				"post"
+			],
+			"title": "Blank"
 		},
 		{
 			"name": "no-title",
-			"title": "No Title",
-			"postTypes": ["page", "post"]
-		},
-		{
-			"name": "single-resource",
-			"title": "Single Resource",
 			"postTypes": [
-				"resource"
-			]
+				"page",
+				"post"
+			],
+			"title": "No Title"
 		},
 		{
-			"name": "section",
-			"title": "Section Page",
-			"postTypes": ["page", "resource"]
-		},
-		{
-			"name": "resource-home",
-			"title": "Resources Home Page",
+			"name": "wp-custom-template-page-resource",
 			"postTypes": [
-				"resource"
-			]
+				"page"
+			],
+			"title": "Resource Page"
 		},
 		{
-			"name": "resource-single-2",
-			"title": "Resource Page with Section Sidebar + Breadcrumbs",
+			"name": "wp-custom-template-section",
 			"postTypes": [
-				"resource"
-			]
-		},
-		
-		{
-			"name": "single-case_study",
-			"title": "Single Case Study",
-			"postTypes": [
-				"case_study"
-			]
+				"page"
+			],
+			"title": "Section Page"
 		}
 	],
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"defaultPalette": false,
-			"defaultGradients": false,
 			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
 			"duotone": [
 				{
 					"colors": [
 						"#000000",
 						"#ffffff"
 					],
-					"slug": "grayscale",
-					"name": "Grayscale"
+					"name": "Grayscale",
+					"slug": "grayscale"
 				},
 				{
 					"colors": [
 						"#ffffff",
 						"#381d92"
 					],
-					"slug": "primary",
-					"name": "Primary"
+					"name": "Primary",
+					"slug": "primary"
 				},
 				{
 					"colors": [
 						"#ffffff",
 						"#cfcaf8"
 					],
-					"slug": "secondary",
-					"name": "Secondary"
+					"name": "Secondary",
+					"slug": "secondary"
 				},
 				{
 					"colors": [
 						"#381d92",
 						"#cfcaf8"
 					],
-					"slug": "primary-secondary",
-					"name": "Primary and Secondary"
+					"name": "Primary and Secondary",
+					"slug": "primary-secondary"
 				},
 				{
 					"colors": [
 						"#0B0620",
 						"#381d92"
 					],
-					"slug": "foreground-primary",
-					"name": "Foreground and Primary"
+					"name": "Foreground and Primary",
+					"slug": "foreground-primary"
 				},
 				{
 					"colors": [
 						"#0B0620",
 						"#cfcaf8"
 					],
-					"slug": "foreground-secondary",
-					"name": "Foreground and Secondary"
+					"name": "Foreground and Secondary",
+					"slug": "foreground-secondary"
 				}
 			],
 			"gradients": [
 				{
-					"slug": "vertical-secondary-to-tertiary",
 					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--tertiary) 100%)",
-					"name": "Vertical secondary to tertiary"
+					"name": "Vertical secondary to tertiary",
+					"slug": "vertical-secondary-to-tertiary"
 				},
 				{
-					"slug": "vertical-secondary-to-background",
 					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical secondary to background"
+					"name": "Vertical secondary to background",
+					"slug": "vertical-secondary-to-background"
 				},
 				{
-					"slug": "vertical-tertiary-to-background",
 					"gradient": "linear-gradient(to bottom,var(--wp--preset--color--tertiary) 0%,var(--wp--preset--color--background) 100%)",
-					"name": "Vertical tertiary to background"
+					"name": "Vertical tertiary to background",
+					"slug": "vertical-tertiary-to-background"
 				},
 				{
-					"slug": "diagonal-primary-to-foreground",
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--foreground) 100%)",
-					"name": "Diagonal primary to foreground"
+					"name": "Diagonal primary to foreground",
+					"slug": "diagonal-primary-to-foreground"
 				},
 				{
-					"slug": "diagonal-secondary-to-background",
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--secondary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal secondary to background"
+					"name": "Diagonal secondary to background",
+					"slug": "diagonal-secondary-to-background"
 				},
 				{
-					"slug": "diagonal-background-to-secondary",
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--secondary) 50%)",
-					"name": "Diagonal background to secondary"
+					"name": "Diagonal background to secondary",
+					"slug": "diagonal-background-to-secondary"
 				},
 				{
-					"slug": "diagonal-tertiary-to-background",
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--tertiary) 50%,var(--wp--preset--color--background) 50%)",
-					"name": "Diagonal tertiary to background"
+					"name": "Diagonal tertiary to background",
+					"slug": "diagonal-tertiary-to-background"
 				},
 				{
-					"slug": "diagonal-background-to-tertiary",
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--tertiary) 50%)",
-					"name": "Diagonal background to tertiary"
+					"name": "Diagonal background to tertiary",
+					"slug": "diagonal-background-to-tertiary"
 				}
 			],
 			"palette": [
 				{
-					"slug": "foreground",
 					"color": "#1c1e21",
-					"name": "Foreground"
+					"name": "Foreground",
+					"slug": "foreground"
 				},
 				{
-					"slug": "background",
 					"color": "#fcfcfc",
-					"name": "Background"
+					"name": "Background",
+					"slug": "background"
 				},
-					{
+				{
 					"color": "#003957",
 					"name": "Primary",
 					"slug": "primary"
@@ -225,7 +210,7 @@
 					"color": "#8a100b",
 					"name": "BC Red",
 					"slug": "BC Red"
-				}, 
+				},
 				{
 					"color": "#501315",
 					"name": "BC Dark Red",
@@ -244,50 +229,55 @@
 				}
 			},
 			"spacing": {
-				"small": "min(2rem, 3.5vw)",
-				"medium": "calc(3 * var(--wp--custom--spacing--small))",
 				"large": "min(6rem, 10vw)",
-				"outer": "2rem"
+				"medium": "calc(3 * var(--wp--custom--spacing--small))",
+				"outer": "2rem",
+				"small": "min(2rem, 3.5vw)"
 			},
 			"typography": {
+				"font-weight": {
+					"black": "900",
+					"bold": "700",
+					"extraBold": "800",
+					"extraLight": "200",
+					"light": "300",
+					"medium": "500",
+					"regular": "400",
+					"semiBold": "600",
+					"thin": "100"
+				},
 				"fontSmoothing": {
 					"moz": "grayscale",
 					"webkit": "antialiased"
 				},
-				"font-weight": {
-					"black": "900",
-					"extraBold": "800",
-					"bold": "700",
-					"semiBold": "600",
-					"medium": "500",
-					"regular": "400",
-					"light": "300",
-					"extraLight": "200",
-					"thin": "100"
-				},
 				"line-height": {
-					"tiny": 1.15,
-					"small": 1.2,
+					"large": 1.8,
 					"medium": 1.4,
 					"normal": 1.6,
-					"large": 1.8
+					"small": 1.2,
+					"tiny": 1.15
 				}
 			}
 		},
 		"layout": {
 			"contentSize": "40rem",
-			"wideSize": "80rem"
+			"wideSize": "90rem"
 		},
 		"spacing": {
-			"units": ["%", "px", "em", "rem", "ch", "vh", "vw"]
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"ch",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"dropCap": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Inter\", sans-serif",
-					"name": "Body",
-					"slug": "body",
 					"fontFace": [
 						{
 							"fontDisplay": "block",
@@ -299,12 +289,34 @@
 								"file:./assets/fonts/Inter/Inter-VariableFont_slnt,wght.woff2"
 							]
 						}
-					]
+					],
+					"fontFamily": "\"Inter\", sans-serif",
+					"name": "Body",
+					"slug": "body"
 				},
 				{
 					"fontFamily": "\"Inter\", sans-serif",
 					"name": "Headings",
 					"slug": "heading"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Inter",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "100 800",
+							"origin": "gutenberg_wp_webfonts_api",
+							"provider": "local",
+							"src": [
+								"https://dev-cdil-resources.pantheonsite.io/wp-content/themes/cdilblocks/assets/fonts/Inter/Inter-VariableFont_slnt,wght.woff2"
+							]
+						}
+					],
+					"fontFamily": "Inter",
+					"name": "Inter",
+					"slug": "inter"
 				}
 			],
 			"fontSizes": [
@@ -602,19 +614,20 @@
 	},
 	"templateParts": [
 		{
+			"area": "header",
 			"name": "header",
-			"title": "Header",
-			"area": "header"
+			"title": "Header"
 		},
 		{
+			"area": "header",
 			"name": "header-minimal",
-			"title": "Header Minimal",
-			"area": "header"
+			"title": "Header Minimal"
 		},
 		{
+			"area": "footer",
 			"name": "footer",
-			"title": "Footer",
-			"area": "footer"
+			"title": "Footer"
 		}
-	]
+	],
+	"version": 2
 }
