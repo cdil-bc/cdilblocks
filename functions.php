@@ -147,15 +147,22 @@ add_action( 'init', 'cdilblocks_register_block_styles' );
 // Enqueue Scripts and Styles
 function add_theme_scripts() {
 	
-	wp_enqueue_style( 'tocbot', get_template_directory_uri() . '/assets/toc/toc.css', array(), '1.1', 'all');
-	wp_enqueue_script('tocbot', get_stylesheet_directory_uri().'/assets/toc/tocbot.min.js', 
+	wp_enqueue_style( 'tocbot', get_template_directory_uri() . '/assets/scripts/toc/toc.css', array(), '1.1', 'all');
+	wp_enqueue_script('tocbot', get_stylesheet_directory_uri().'/assets/scripts/toc/tocbot.min.js', 
     array(), false, true);
-	wp_enqueue_script('tocbot-init', get_stylesheet_directory_uri().'/assets/toc/tocbot-init.js', 
+	wp_enqueue_script('tocbot-init', get_stylesheet_directory_uri().'/assets/scripts/toc/tocbot-init.js', 
+    array(), false, true);
+	wp_enqueue_style( 'scroll-to-top', get_template_directory_uri() . '/assets/scripts/scroll-to-top/scroll-to-top.css', array(), '1.1', 'all');
+	wp_enqueue_script('scroll-to-top', get_stylesheet_directory_uri().'/assets/scripts/scroll-to-top/scroll-to-top.js', 
+    array(), false, true);
+	wp_enqueue_script('sticky-header', get_stylesheet_directory_uri().'/assets/scripts/sticky/sticky-header.js', 
     array(), false, true);
 
-	wp_enqueue_script('sticky-header', get_stylesheet_directory_uri().'/assets/sticky/sticky-header.js', 
+	wp_enqueue_script('clipboard', get_stylesheet_directory_uri().'/assets/scripts/clipboard/clipboard.min.js', 
     array(), false, true);
-	
+	wp_enqueue_script('clipboard-init', get_stylesheet_directory_uri().'/assets/scripts/clipboard/clipboard-init.js', 
+    array(), false, true);
+
 	//   if ( is_singular() ) {
 	// 	wp_enqueue_script( 'comment-reply' );
 	//   }
@@ -209,3 +216,31 @@ function page_tagcat_settings() {
 	}
 	// Add to the admin_init hook of your theme functions.php file
 	add_action( 'init', 'page_tagcat_settings' );
+
+
+
+
+/*
+ * Blacklist specific Gutenberg blocks
+ *
+ * @author Misha Rudrastyh
+ * @link https://rudrastyh.com/gutenberg/remove-default-blocks.html#blacklist-blocks
+ */
+add_filter( 'allowed_block_types_all', 'blacklist_blocks' );
+ 
+function blacklist_blocks( $allowed_blocks ) {
+	// get all the registered blocks
+	$blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+
+	// then disable some of them
+	unset( $blocks[ 'kadence/countdown' ] );
+	unset( $blocks[ 'kadence/countup' ] );
+	unset( $blocks[ 'kadence/icon' ] );
+
+	// return the new list of allowed blocks
+	return array_keys( $blocks );
+	
+}
+
+/* Add customizer  */
+add_action( 'customize_register', '__return_true' );
