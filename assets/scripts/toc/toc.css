@@ -27,7 +27,7 @@
 }
 
 .toc>.toc-list li {
-    list-style: none
+    list-style: none;
 }
 
 .toc-list {
@@ -39,6 +39,11 @@ a.toc-link {
     color: var(--wp--preset--color--primary);
     height: 100%;
     text-decoration:none;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
 }
 
 .is-collapsible {
