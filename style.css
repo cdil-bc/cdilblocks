@@ -7,16 +7,14 @@ Description: Theme for developed by Center for Digital Innovation in Learning at
 Requires at least: 6.0
 Tested up to: 6.0
 Requires PHP: 5.6
-Version: 1.0.7
+Version: 1.0.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: extendable
+Text Domain: cidilblocks
 Tags: one-column, custom-colors, custom-menu, custom-logo, e-commerce, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
 
 CDIL Blocks is a derivative work of the code from Extendible which is licensed GPLv2.
-
-CDIL Blocks e WordPress Theme, (C) 2022 Extendify Inc.
-Extendable therefore is also distributed under the terms of the GNU GPL.
+CDIL BLocks therefore is also distributed under the terms of the GNU GPL.
 */
 
 /*
@@ -123,6 +121,70 @@ a:active {
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
 }
 
+.wp-block-group.is-style-shadow-lg {
+	border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+}
+
+.wp-block-group.is-style-callout-info {
+	background-color: #F5F5F7;
+	border-left: 5px solid var(--wp--preset--color--blue);
+	padding: 1.25em 2em;
+	border-radius: 4px;
+}
+
+.wp-block-group.is-style-callout-blue {
+	background-color: var(--wp--preset--color--info);
+	padding: 1.25em 2em;
+	border:1px solid #BFD0D6;
+	border-radius: 3px; 
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.wp-block-group.is-style-callout-success {
+	background-color: #F5F5F7;
+	border-left: 5px solid var(--wp--preset--color--green-bright);
+	padding: 1.25em 2em;
+	border-radius: 4px;
+}
+
+.wp-block-group.is-style-callout-green {
+	padding: 1.25em 2em;
+	border: 1px solid #c1c7af;
+	border-radius: 3px; 
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.wp-block-group.is-style-callout-warning {
+	background-color: #F5F5F7;
+	border-left: 5px solid #F6D82D;
+	padding: 1.25em 2em;
+	border-radius: 4px;
+}
+
+.wp-block-group.is-style-callout-yellow {
+	background-color: var(--wp--preset--color--yellow-light);
+	padding: 1.25em 2em;
+	border:1px solid #FCF0AD;
+	border-radius: 3px; 
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.wp-block-group.is-style-callout-danger {
+	background-color: #F5F5F7;
+	border-left: 5px solid var(--wp--preset--color--red);
+	padding: 1.25em 2em;
+	border-radius: 4px;
+}
+
+.wp-block-group.is-style-callout-red {
+	background-color: var(--wp--preset--color--danger);
+	padding: 1.25em 2em;
+	border:1px solid #BFD0D6;
+	border-radius: 3px; 
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
 
 
 
@@ -155,6 +217,28 @@ blockquote:is(.is-style-plain) {
 .no-underline,
 .no-underline a {
 	text-decoration: none !important;
+}
+
+.no-margin-block-start {
+	margin-block-start: calc(var(--wp--style--block-gap)) * -1 !important;
+}
+
+.items-stretch {
+	align-items: stretch !important;
+}
+
+/* Used on left sidebar - */
+.full-height-column {
+	min-height: calc(100vh - 4rem);
+}
+
+/* Box Shadow */
+.box-shadow--minimal {
+	box-shadow: var(--wp--custom--box-shadow--minimal);
+}
+
+.box-shadow--default {
+	box-shadow: var(--wp--custom--box-shadow--default);
 }
 
 
@@ -473,10 +557,10 @@ ul {
 	font-size: var(--wp--preset--font-size--base);
 }
 
-.home-sections .wp-block-column {
+/* .home-sections .wp-block-column {
 	border-radius: .5rem;
-	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
+} */
 
 .home .wp-block-latest-posts__post-title {
 	text-decoration: none;
@@ -660,20 +744,7 @@ ul {
 		animation-duration: .25s;
   }
 
-/* Ulilities */
 
-.no-margin-block-start {
-	margin-block-start: calc(var(--wp--style--block-gap)) * -1 !important;
-}
-
-.items-stretch {
-	align-items: stretch !important;
-}
-
-/* Used on left sidebar  */
-.full-height-column {
-	min-height: calc(100vh - 4rem);
-}
 
 
 /* homepge fade-in */

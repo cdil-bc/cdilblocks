@@ -167,7 +167,37 @@
 					"slug": "base"
 				},
 				{
-					"color": "#dccaa0",
+					"color": "#0d5e93",
+					"name": "Blue",
+					"slug": "blue"
+				},
+				{
+					"color": "#8a100b",
+					"name": "Red",
+					"slug": "Red"
+				},
+				{
+					"color": "#501315",
+					"name": "Dark Red",
+					"slug": "Dark Red"
+				},
+				{
+					"color": "#9fab78",
+					"name": "Green",
+					"slug": "Green"
+				},
+				{
+					"color": "#367746",
+					"name": "Bright Green",
+					"slug": "green-bright"
+				},
+				{
+					"color": "#00-Dark",
+					"name": "Dark Blue",
+					"slug": "blue-dark"
+				},
+				{
+					"color": "#FCF0AD",
 					"name": "Yellow",
 					"slug": "yellow"
 				},
@@ -187,12 +217,12 @@
 					"slug": "light-warm-gray"
 				},
 				{
-					"color": "#B65955",
+					"color": "#E6C0C0",
 					"name": "Danger",
 					"slug": "danger"
 				},
 				{
-					"color": "#EAD0B7",
+					"color": "#fff5c1",
 					"name": "Warning",
 					"slug": "warning"
 				},
@@ -205,16 +235,6 @@
 					"color": "#D1DCE0",
 					"name": "Info",
 					"slug": "Info"
-				},
-				{
-					"color": "#8a100b",
-					"name": "BC Red",
-					"slug": "BC Red"
-				},
-				{
-					"color": "#501315",
-					"name": "BC Dark Red",
-					"slug": "BC Dark Red"
 				}
 			]
 		},
@@ -261,7 +281,7 @@
 		},
 		"layout": {
 			"contentSize": "40rem",
-			"wideSize": "90rem"
+			"wideSize": "85rem"
 		},
 		"spacing": {
 			"units": [

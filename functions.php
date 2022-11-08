@@ -123,6 +123,15 @@ function cdilblocks_register_block_styles() {
 		'core/group'            => array(
 			'shadow' => __( 'Shadow', 'cdilblocks' ),
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+		
+			'callout-blue' => __( 'Callout-Blue', 'cdilblocks' ),
+			'callout-green' => __( 'Callout-Green', 'cdilblocks' ),
+			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
+			'callout-yellow' => __( 'Callout-Yellow', 'cdilblocks' ),
+			'callout-info' => __( 'Info', 'cdilblocks' ),
+			'callout-success' => __( 'Success', 'cdilblocks' ),
+			'callout-warning' => __( 'Warning', 'cdilblocks' ),
+			'callout-danger' => __( 'Danger', 'cdilblocks' ),
 		),
 		'core/embed'            => array(
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
@@ -158,6 +167,7 @@ function add_theme_scripts() {
 	wp_enqueue_script('sticky-header', get_stylesheet_directory_uri().'/assets/scripts/sticky/sticky-header.js', 
     array(), false, true);
 
+	wp_enqueue_style( 'clipboard', get_template_directory_uri() . '/assets/scripts/clipboard/clipboard.css', array(), '1.1', 'all');
 	wp_enqueue_script('clipboard', get_stylesheet_directory_uri().'/assets/scripts/clipboard/clipboard.min.js', 
     array(), false, true);
 	wp_enqueue_script('clipboard-init', get_stylesheet_directory_uri().'/assets/scripts/clipboard/clipboard-init.js', 
