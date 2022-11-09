@@ -1,8 +1,11 @@
 .copy-short-link {
-    border:none;
-    background:none;
-    padding:0;
-    margin:0;
+    border: 1px solid #ccc;
+    background: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    border-radius: 5px;
+    font-size: .6rem;
+    color: #666;
 }
 
 /* .copy-short-link:before {

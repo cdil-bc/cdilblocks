@@ -36,7 +36,7 @@
 }
 
 a.toc-link {
-    color: var(--wp--preset--color--primary);
+    color: #222;
     height: 100%;
     text-decoration:none;
     width: 200px;
