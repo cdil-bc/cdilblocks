@@ -227,7 +227,11 @@ blockquote:is(.is-style-plain) {
 	align-items: stretch !important;
 }
 
-/* Used on left sidebar - */
+.height-full {
+	height: 100%;
+}
+
+/* Used on left sidebar - hacky */
 .full-height-column {
 	min-height: calc(100vh - 4rem);
 }
