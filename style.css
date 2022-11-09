@@ -186,9 +186,6 @@ a:active {
 }
 
 
-
-
-
 /* Quote - 'Plain' variation
 ----------------------------------------------------------*/
 blockquote:is(.is-style-plain) {
@@ -636,6 +633,11 @@ ul {
 .breadcrumbs [property="itemListElement"]:last-child {
 	display:none;
 }
+
+.breadcrumbs [property="itemListElement"]:nth-last-child(2) {
+	font-weight:bold;
+}
+
 
 
 /* Animations */
