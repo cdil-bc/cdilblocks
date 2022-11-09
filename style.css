@@ -514,6 +514,26 @@ ul {
 
 .in-this-section li {
 	font-size: var(--wp--preset--font-size--small);
+	list-style:none;
+	padding-left:0;
+	padding-bottom: 0.5rem;
+}
+
+/* .in-this-section li:before {
+	content: counter(list-number,decimal-leading-zero);
+	margin-right: 0.5rem;
+	}
+	 */
+
+.in-this-section li a {
+	text-decoration: none;
+}
+
+.in-this-section li.current_page_item a {
+	border-left: 2px solid var(--wp--preset--color--primary);
+	font-weight:bold;
+	color: #222;
+	padding-left: .5rem;
 }
 
 /* Homepage Lists */
@@ -576,18 +596,10 @@ ul {
 	border-radius: .25rem;
 }
 
-/* Constainers  */
-.container-wide {
-	max-width: 78rem;
-	margin-left: auto;
-	margin-right:auto; 
-}
-
 /*  */
 .justify-evenly {
 	justify-content: space-evenly;
 }
-
 
 /* Breadcrumbs */
 .breadcrumbs {
@@ -782,3 +794,8 @@ header h1,
 	max-width: 225px;
 }
 
+/* Temp fixes */
+
+.section-contents .continue {
+	display:none;
+}
