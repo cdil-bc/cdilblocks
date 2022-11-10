@@ -123,11 +123,20 @@ function cdilblocks_register_block_styles() {
 		'core/group'            => array(
 			'shadow' => __( 'Shadow', 'cdilblocks' ),
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
-		
 			'callout-blue' => __( 'Callout-Blue', 'cdilblocks' ),
 			'callout-green' => __( 'Callout-Green', 'cdilblocks' ),
-			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
 			'callout-yellow' => __( 'Callout-Yellow', 'cdilblocks' ),
+			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
+			'callout-info' => __( 'Info', 'cdilblocks' ),
+			'callout-success' => __( 'Success', 'cdilblocks' ),
+			'callout-warning' => __( 'Warning', 'cdilblocks' ),
+			'callout-danger' => __( 'Danger', 'cdilblocks' ),
+		),
+		'core/paragraph'            => array(
+			'callout-blue' => __( 'Callout-Blue', 'cdilblocks' ),
+			'callout-green' => __( 'Callout-Green', 'cdilblocks' ),
+			'callout-yellow' => __( 'Callout-Yellow', 'cdilblocks' ),
+			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
 			'callout-info' => __( 'Info', 'cdilblocks' ),
 			'callout-success' => __( 'Success', 'cdilblocks' ),
 			'callout-warning' => __( 'Warning', 'cdilblocks' ),
@@ -254,3 +263,9 @@ function blacklist_blocks( $allowed_blocks ) {
 
 /* Add customizer  */
 add_action( 'customize_register', '__return_true' );
+
+/* Allow dashicons to view for all users */
+function ww_load_dashicons(){
+	wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons');

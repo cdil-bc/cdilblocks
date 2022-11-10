@@ -8,13 +8,12 @@
     color: #666;
 }
 
-/* .copy-short-link:before {
+.copy-short-link:before {
     font-family: "dashicons";
     content: "\f103";
     position: relative;
     top: 2px;
 }
- */
 
 .tooltipped {
     position: relative
