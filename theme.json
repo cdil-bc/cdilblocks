@@ -17,18 +17,18 @@
 			"title": "No Title"
 		},
 		{
-			"name": "wp-custom-template-page-resource",
+			"name": "child-page",
 			"postTypes": [
 				"page"
 			],
-			"title": "Resource Page"
+			"title": "Child Page"
 		},
 		{
-			"name": "wp-custom-template-section",
+			"name": "parent-page",
 			"postTypes": [
 				"page"
 			],
-			"title": "Section Page"
+			"title": "Parent Page"
 		}
 	],
 	"settings": {
