@@ -1,73 +1,73 @@
 
 wp.domReady( () => {
-	wp.blocks.registerBlockVariation(
-        'core/group',
-        {
-            name: 'info-group-box',
-            title: 'Callout-Info (Group)',
-            attributes: { 
-                // className: 'is-style-callout-info',
-                // borderColor: "green",
-                style: {
-                    spacing: {
-                        padding: {
-                            top: "var:preset|spacing|x-small",
-                            right: "var:preset|spacing|x-small",
-                            bottom:"var:preset|spacing|x-small", 
-                            left: "var:preset|spacing|x-small"
-                        }
-                    }
-                },
-            },
-            innerBlocks: [
-                [
-                    'core/heading',
-                    {
-                        level: 3,
-                        placeholder: 'Heading'
-                    } 
-                ],
-                [
-                    'core/paragraph',
-                    {
-                        placeholder: 'Start writing your story...'
-                    } 
-                ],
-            ]
+	// wp.blocks.registerBlockVariation(
+    //     'core/group',
+    //     {
+    //         name: 'info-group-box',
+    //         title: 'Callout-Info',
+    //         attributes: { 
+    //             // className: 'is-style-callout-info',
+    //             // borderColor: "green",
+    //             style: {
+    //                 spacing: {
+    //                     padding: {
+    //                         top: "var:preset|spacing|x-small",
+    //                         right: "var:preset|spacing|x-small",
+    //                         bottom:"var:preset|spacing|x-small", 
+    //                         left: "var:preset|spacing|x-small"
+    //                     }
+    //                 }
+    //             },
+    //         },
+    //         innerBlocks: [
+    //             [
+    //                 'core/heading',
+    //                 {
+    //                     level: 3,
+    //                     placeholder: 'Heading'
+    //                 } 
+    //             ],
+    //             [
+    //                 'core/paragraph',
+    //                 {
+    //                     placeholder: ''
+    //                 } 
+    //             ],
+    //         ]
 
-        }
-    );
+    //     }
+    // );
 
 /**
-     * Customize the defauly Media & Text block.
+     * Customize the defauly Media & Text block.(Sample)
      */
- wp.blocks.registerBlockVariation(
-    'core/media-text', 
-    {
-        name: 'custom-media-text',
-        title: 'Media & Text',
-        isDefault: true,
-        attributes: { 
-            mediaPosition: 'right', 
-            backgroundColor: 'secondary' 
-        },
-        innerBlocks: [
-            [
-                'core/heading',
-                {
-                    level: 3,
-                    placeholder: 'Heading'
-                } 
-            ],
-            [
-                'core/paragraph',
-                {
-                    placeholder: 'Start writing your story...'
-                } 
-            ],
-        ]
-    },
-);
+//  wp.blocks.registerBlockVariation(
+//     'core/media-text', 
+//     {
+//         name: 'custom-media-text',
+//         title: 'Media & Text',
+//         isDefault: true,
+//         attributes: { 
+//             mediaPosition: 'right', 
+//             backgroundColor: 'secondary' 
+//         },
+//         innerBlocks: [
+//             [
+//                 'core/heading',
+//                 {
+//                     level: 3,
+//                     placeholder: 'Heading'
+//                 } 
+//             ],
+//             [
+//                 'core/paragraph',
+//                 {
+//                     placeholder: 'Start writing your story...'
+//                 } 
+//             ],
+//         ]
+//     },
+// );
 
 
     /**
