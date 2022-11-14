@@ -236,6 +236,30 @@ blockquote:is(.is-style-plain) {
  /* Utility Classes
 ----------------------------------------------------------*/
 
+/* responsive options */
+@media screen and (min-width:1080px) {
+
+    body:not(.wp-admin) .hide-on-desktop {
+        display: none
+    }
+
+}
+
+@media screen and (max-width:1079px) and (min-width:737px) {
+
+    body:not(.wp-admin) .hide-on-tablet {
+		display: none
+    }
+}
+
+
+@media screen and (max-width:736px) {
+
+    body:not(.wp-admin) .hide-on-mobile {
+        display: none;
+	}
+}
+
 .no-underline,
 .no-underline a {
 	text-decoration: none !important;
@@ -548,10 +572,20 @@ ul {
 	text-decoration: none;
 }
 
-.next-previous-nav .parent,
-.next-previous-nav .next {
-	/* margin-left:auto; */
+.next-previous-nav a:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
+
+.next-previous-nav .previous,
+.next-previous-nav .next {
+	position: relative;
 }
 
 .next-previous-nav .previous {
