@@ -3,18 +3,21 @@ Theme Name: CDIL BLocks
 Theme URI: 
 Author: Tim Lindgren | Center for Digital Innovation in Learning at Boston College
 Author URI: 
-Description: Theme for developed by Center for Digital Innovation in Learning at Boston College
+Description: Theme developed by Center for Digital Innovation in Learning at Boston College
 Requires at least: 6.0
 Tested up to: 6.0
 Requires PHP: 5.6
-Version: 0.51 (11-13-2022) 
+Version: 0.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cdilblocks
 Tags: one-column, custom-colors, custom-menu, custom-logo, e-commerce, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
 
-CDIL Blocks is a derivative work of the code from Extendible which is licensed GPLv2.
-CDIL BLocks therefore is also distributed under the terms of the GNU GPL.
+A [block-based theme](https://developer.wordpress.org/themes/block-themes/) developed by Tim Lindgren for the [Center for Digital Innovation in Learning - Boston College](https://www.bc.edu/content/bc-web/academics/sites/cdil.html) at Boston College. 
+
+Originally based on [Extendable - WordPress theme | WordPress.org](https://wordpress.org/themes/extendable/) but not much is left from the original theme
+
+Under heavy development and for internal use only at this point - not really ready for sharing. 
 */
 
 /*
