@@ -284,5 +284,6 @@ function ww_load_dashicons(){
 add_action('wp_enqueue_scripts', 'ww_load_dashicons');
 
 
-
+// Theme Admin Page
+require get_template_directory() . '/inc/admin/theme-admin.php';
 
