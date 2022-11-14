@@ -123,6 +123,7 @@ function cdilblocks_register_block_styles() {
 		'core/group'            => array(
 			'shadow' => __( 'Shadow', 'cdilblocks' ),
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+			'intro-box' => __( 'Introduction Box', 'cdilblocks' ),
 			'highlight-box' => __( 'Highlight Box', 'cdilblocks' ),
 			'callout-info' => __( 'Info', 'cdilblocks' ),
 			'callout-success' => __( 'Success', 'cdilblocks' ),
