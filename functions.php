@@ -161,6 +161,19 @@ function cdilblocks_register_block_styles() {
 }
 add_action( 'init', 'cdilblocks_register_block_styles' );
 
+/**
+ * Register block variations.
+ */
+
+function block_variations_enqueue() {
+    wp_enqueue_script(
+        'block-variations',
+		get_template_directory_uri() . '/assets/js/block-variations.js',
+        array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' )
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'block_variations_enqueue' );
+
 
 // Enqueue Scripts and Styles
 function add_theme_scripts() {
@@ -228,13 +241,13 @@ add_post_type_support( 'page', 'excerpt' );
 
 // Add Tags and Categories to Pages
 function page_tagcat_settings() {
-	// Add tag metabox to page
-	// register_taxonomy_for_object_type('post_tag', 'page');
-	// Add category metabox to page
-	register_taxonomy_for_object_type('category', 'page');
-	}
-	// Add to the admin_init hook of your theme functions.php file
-	add_action( 'init', 'page_tagcat_settings' );
+// Add tag metabox to page
+// register_taxonomy_for_object_type('post_tag', 'page');
+// Add category metabox to page
+register_taxonomy_for_object_type('category', 'page');
+}
+// Add to the admin_init hook of your theme functions.php file
+add_action( 'init', 'page_tagcat_settings' );
 
 
 
@@ -245,21 +258,21 @@ function page_tagcat_settings() {
  * @author Misha Rudrastyh
  * @link https://rudrastyh.com/gutenberg/remove-default-blocks.html#blacklist-blocks
  */
-add_filter( 'allowed_block_types_all', 'blacklist_blocks' );
+// add_filter( 'allowed_block_types_all', 'blacklist_blocks' );
  
-function blacklist_blocks( $allowed_blocks ) {
-	// get all the registered blocks
-	$blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+// function blacklist_blocks( $allowed_blocks ) {
+// 	// get all the registered blocks
+// 	$blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
 
-	// then disable some of them
-	unset( $blocks[ 'kadence/countdown' ] );
-	unset( $blocks[ 'kadence/countup' ] );
-	unset( $blocks[ 'kadence/icon' ] );
+// 	// then disable some of them
+// 	unset( $blocks[ 'kadence/countdown' ] );
+// 	unset( $blocks[ 'kadence/countup' ] );
+// 	unset( $blocks[ 'kadence/icon' ] );
 
-	// return the new list of allowed blocks
-	return array_keys( $blocks );
+// 	// return the new list of allowed blocks
+// 	return array_keys( $blocks );
 	
-}
+// }
 
 /* Add customizer  */
 add_action( 'customize_register', '__return_true' );
@@ -269,3 +282,7 @@ function ww_load_dashicons(){
 	wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'ww_load_dashicons');
+
+
+
+
