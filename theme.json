@@ -127,7 +127,12 @@
 					"gradient": "linear-gradient(to bottom right,var(--wp--preset--color--background) 50%,var(--wp--preset--color--tertiary) 50%)",
 					"name": "Diagonal background to tertiary",
 					"slug": "diagonal-background-to-tertiary"
-				}
+				},
+				{
+                    "gradient": "linear-gradient(180deg, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--secondary) 73%, var(--wp--preset--color--background) 73%, var(--wp--preset--color--background) 100%)",
+                    "name": "Secondary to Light",
+                    "slug": "black-primary"
+                }
 			],
 			"palette": [
 				{
@@ -278,6 +283,7 @@
 				}
 			}
 		},
+		
 		"layout": {
 			"contentSize": "40rem",
 			"wideSize": "85rem"
@@ -291,7 +297,15 @@
 				"ch",
 				"vh",
 				"vw"
-			]
+			],
+			"spacingScale": {
+                "operator": "*",
+                "increment": 1.5,
+                "steps": 7,
+                "mediumStep": 1.5,
+                "unit": "rem"
+            }
+
 		},
 		"typography": {
 			"dropCap": false,
