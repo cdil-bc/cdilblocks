@@ -123,25 +123,13 @@ function cdilblocks_register_block_styles() {
 		'core/group'            => array(
 			'shadow' => __( 'Shadow', 'cdilblocks' ),
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
-			'callout-blue' => __( 'Callout-Blue', 'cdilblocks' ),
-			'callout-green' => __( 'Callout-Green', 'cdilblocks' ),
-			'callout-yellow' => __( 'Callout-Yellow', 'cdilblocks' ),
-			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
+			'highlight-box' => __( 'Highlight Box', 'cdilblocks' ),
 			'callout-info' => __( 'Info', 'cdilblocks' ),
 			'callout-success' => __( 'Success', 'cdilblocks' ),
 			'callout-warning' => __( 'Warning', 'cdilblocks' ),
 			'callout-danger' => __( 'Danger', 'cdilblocks' ),
 		),
-		'core/paragraph'            => array(
-			'callout-blue' => __( 'Callout-Blue', 'cdilblocks' ),
-			'callout-green' => __( 'Callout-Green', 'cdilblocks' ),
-			'callout-yellow' => __( 'Callout-Yellow', 'cdilblocks' ),
-			'callout-red' => __( 'Callout-Red', 'cdilblocks' ),
-			'callout-info' => __( 'Info', 'cdilblocks' ),
-			'callout-success' => __( 'Success', 'cdilblocks' ),
-			'callout-warning' => __( 'Warning', 'cdilblocks' ),
-			'callout-danger' => __( 'Danger', 'cdilblocks' ),
-		),
+
 		'core/embed'            => array(
 			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
 		),
