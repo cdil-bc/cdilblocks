@@ -281,25 +281,25 @@ require get_template_directory() . '/inc/admin/theme-admin.php';
 May need to make these dismissable: [WPTT/admin-notices: Package for standardizing how themes output admin notices.](https://github.com/WPTT/admin-notices)
 */
 
-add_action('admin_notices', 'showAdminMessages');
+// add_action('admin_notices', 'showAdminMessages');
 
-function showAdminMessages() {
-	$plugin_messages = array();
+// function showAdminMessages() {
+// 	$plugin_messages = array();
 
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+// 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-	// Lazyblocks Plugin
-	if(!is_plugin_active( 'lazyblocks.php' ))	{
-		$plugin_messages[] = 'This theme requires you to install the Lazyblocks plugin, <a href="https://wordpress.org/plugins/lazy-blocks/">download it from here</a>.';
-	}
+// 	// Lazyblocks Plugin
+// 	if(!is_plugin_active( 'lazyblocks.php' ))	{
+// 		$plugin_messages[] = 'This theme requires you to install the Lazyblocks plugin, <a href="https://wordpress.org/plugins/lazy-blocks/">download it from here</a>.';
+// 	}
 
-	if(count($plugin_messages) > 0)	{
-		echo '<div class="notice notice-warning" >';
+// 	if(count($plugin_messages) > 0)	{
+// 		echo '<div class="notice notice-warning" >';
 
-			foreach($plugin_messages as $message) {
-				echo '<p><strong>'.$message.'</strong></p>';
-			}
+// 			foreach($plugin_messages as $message) {
+// 				echo '<p><strong>'.$message.'</strong></p>';
+// 			}
 
-		echo '</div>';
-	}
-}
+// 		echo '</div>';
+// 	}
+// }

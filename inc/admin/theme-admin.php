@@ -16,8 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 function cdilblocks_theme_admin_menu() {
 	add_theme_page(
-		esc_html__( 'Cdilblocks Getting Started', 'cdilblocks' ),
-		esc_html__( 'Cdilblocks Theme', 'cdilblocks' ),
+		esc_html__( 'CDIL Blocks Theme', 'cdilblocks' ),
 		'manage_options',
 		'cdilblocks-theme',
 		'cdilblocks_admin_page_content',
