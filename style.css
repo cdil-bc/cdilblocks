@@ -138,7 +138,7 @@ a:active {
 }
 
 .wp-block-group.is-style-highlight-box {
-	background-color: #ddd;
+	background-color: #eee;
 	padding: 1.25em 2em;
 	border:1px solid #ccc;
 	border-radius: 3px; 
@@ -152,6 +152,7 @@ a:active {
 	padding: 1.25em 2em 1.25em 3rem;
 	border-radius: 4px;
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	background-color: #eee;
 	position: relative;
 }
 
@@ -171,7 +172,6 @@ a:active {
 }
 
 .wp-block-group.is-style-callout-info {
-	background-color: #E1EBF2;
 	border-left: 5px solid var(--wp--preset--color--blue);
 }
 
@@ -182,7 +182,6 @@ a:active {
 }
 
 .wp-block-group.is-style-callout-success {
-	background-color: #DDF3E3;
 	border-left: 5px solid var(--wp--preset--color--green-bright);
 }
 
@@ -193,7 +192,6 @@ a:active {
 }
 
 .wp-block-group.is-style-callout-warning {
-	background-color: #FCF5DA;
 	border-left: 5px solid #F6D82D;
 }
 
@@ -204,7 +202,6 @@ a:active {
 }
 
 .wp-block-group.is-style-callout-danger {
-	background-color: #FCEBEB;
 	border-left: 5px solid var(--wp--preset--color--red);
 }
 
