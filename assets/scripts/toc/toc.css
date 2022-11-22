@@ -32,14 +32,14 @@
 
 .toc-list {
     margin: 0;
-    padding-left: 1rem;
+    padding-left: .75rem;
 }
 
 a.toc-link {
     color: #222;
     height: 100%;
     text-decoration:none;
-    width: 200px;
+    width: 12rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
