@@ -152,7 +152,6 @@ a:active {
 	padding: 1.25em 2em 1.25em 3rem;
 	border-radius: 4px;
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-	background-color: #eee;
 	position: relative;
 }
 
@@ -173,6 +172,7 @@ a:active {
 
 .wp-block-group.is-style-callout-info {
 	border-left: 5px solid var(--wp--preset--color--blue);
+	background-color: #ECF0F5;
 }
 
 .wp-block-group.is-style-callout-info:before {
@@ -183,6 +183,7 @@ a:active {
 
 .wp-block-group.is-style-callout-success {
 	border-left: 5px solid var(--wp--preset--color--green-bright);
+	background-color: #DDF3E3;
 }
 
 .wp-block-group.is-style-callout-success:before {
@@ -193,6 +194,7 @@ a:active {
 
 .wp-block-group.is-style-callout-warning {
 	border-left: 5px solid #F6D82D;
+	background-color: #FCF5DA;
 }
 
 .wp-block-group.is-style-callout-warning:before {
@@ -203,6 +205,7 @@ a:active {
 
 .wp-block-group.is-style-callout-danger {
 	border-left: 5px solid var(--wp--preset--color--red);
+	background-color: #FCEBEB;
 }
 
 .wp-block-group.is-style-callout-danger:before {
