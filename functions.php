@@ -227,7 +227,6 @@ function custom_class( $classes ) {
 // Add Exerpts on Pages
 add_post_type_support( 'page', 'excerpt' );
 
-
 // Add Tags and Categories to Pages
 function page_tagcat_settings() {
 // Add tag metabox to page
@@ -238,68 +237,11 @@ register_taxonomy_for_object_type('category', 'page');
 // Add to the admin_init hook of your theme functions.php file
 add_action( 'init', 'page_tagcat_settings' );
 
-
-
-
-/*
- * Blacklist specific Gutenberg blocks
- *
- * @author Misha Rudrastyh
- * @link https://rudrastyh.com/gutenberg/remove-default-blocks.html#blacklist-blocks
- */
-// add_filter( 'allowed_block_types_all', 'blacklist_blocks' );
- 
-// function blacklist_blocks( $allowed_blocks ) {
-// 	// get all the registered blocks
-// 	$blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
-
-// 	// then disable some of them
-// 	unset( $blocks[ 'kadence/countdown' ] );
-// 	unset( $blocks[ 'kadence/countup' ] );
-// 	unset( $blocks[ 'kadence/icon' ] );
-
-// 	// return the new list of allowed blocks
-// 	return array_keys( $blocks );
-	
-// }
-
-/* Add customizer  */
-add_action( 'customize_register', '__return_true' );
-
 /* Allow dashicons to view for all users */
 function ww_load_dashicons(){
 	wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'ww_load_dashicons');
 
-
 // Theme Admin Page
 require get_template_directory() . '/inc/admin/theme-admin.php';
-
-/* Add required plugins notices
-[Wordpress Themes Required Plugins - Dhali.com](https://dhali.com/wordpress/wordpress-required-plugins/)
-May need to make these dismissable: [WPTT/admin-notices: Package for standardizing how themes output admin notices.](https://github.com/WPTT/admin-notices)
-*/
-
-// add_action('admin_notices', 'showAdminMessages');
-
-// function showAdminMessages() {
-// 	$plugin_messages = array();
-
-// 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-// 	// Lazyblocks Plugin
-// 	if(!is_plugin_active( 'lazyblocks.php' ))	{
-// 		$plugin_messages[] = 'This theme requires you to install the Lazyblocks plugin, <a href="https://wordpress.org/plugins/lazy-blocks/">download it from here</a>.';
-// 	}
-
-// 	if(count($plugin_messages) > 0)	{
-// 		echo '<div class="notice notice-warning" >';
-
-// 			foreach($plugin_messages as $message) {
-// 				echo '<p><strong>'.$message.'</strong></p>';
-// 			}
-
-// 		echo '</div>';
-// 	}
-// }
