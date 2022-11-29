@@ -1,0 +1,260 @@
+[
+    {
+        "id": 2549,
+        "title": "Edit Page",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/editpage",
+        "description": "",
+        "category": "theme",
+        "category_label": "theme",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<?php \n$postID = get_queried_object_id();\n?>\n<a class=\"edit-link\" href=\"<?php echo get_edit_post_link( $postID, $context ); ?>\">Edit<\/a>\n\n",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 2159,
+        "title": "Next-Previous",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n<rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/nextprevious",
+        "description": "",
+        "category": "lazyblocks",
+        "category_label": "lazyblocks",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<?php\nfunction getPrevNext(){\n  global $post;\n  \n\t$pagelist = get_pages('sort_column=menu_order&sort_order=asc&post_status=publish,private&child_of=' . $post->post_parent . '');\n\t$pages = array();\n\tforeach ($pagelist as $page) {\n\t   $pages[] += $page->ID;\n\t}\n\n\t$current = array_search(get_the_ID(), $pages);\n\t$prevID = $pages[$current-1];\n\t$nextID = $pages[$current+1];\n\t\n\techo '<div class=\"next-previous-nav\">';\n\t\n\tif (!empty($prevID) & has_post_parent( get_the_ID() )) {\n\t\techo '<div class=\"previous\">';\n\t\techo '<div><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" preserveAspectRatio=\"xMidYMid meet\" data-rnw-int-class=\"nearest__265-1786__\" class=\"arrow\" style=\"vertical-align: middle;\"><path d=\"M19 12H5M12 19l-7-7 7-7\"><\/path><\/svg> Previous <\/div>';\n\t\techo '<a href=\"';\n\t\techo get_permalink($prevID);\n\t\techo '\">';\n\t\techo get_the_title($prevID); \n\t\techo'<\/a>';\n\t\techo \"<\/div>\";\n\t}\n\tif (!empty($nextID)) {\n\t\techo '<div class=\"next\">';\n\t\techo'<div>Next <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" preserveAspectRatio=\"xMidYMid meet\" data-rnw-int-class=\"nearest__265-1786__\" class=\"arrow\" style=\"vertical-align: middle;\"><path d=\"M5 12h14M12 5l7 7-7 7\"><\/path><\/svg><\/div>';\n\t\techo '<a href=\"';\n\t\techo get_permalink($nextID);\n\t\techo '\">';\n\t\techo get_the_title($nextID); \n\t\techo'<\/a>';\n\t\techo \"<\/div>\";\t\t\n\t} else {\n\t  if ( has_post_parent( get_the_ID() ) ) : ?>\n\t<div class=\"parent\"><div>Up <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" preserveAspectRatio=\"xMidYMid meet\" data-rnw-int-class=\"nearest__265-1786__\" class=\"arrow\" style=\"vertical-align: middle;\"><path d=\"M19 12H5M12 19l-7-7 7-7\"><\/path><\/svg><\/div>\n    <a href=\"<?php the_permalink( get_post_parent( get_the_ID() ) ); ?>\">\n        <?php\n        echo \n            get_the_title( get_post_parent( get_the_ID() ) )\n;\n        ?>\n    <\/a><\/div>\n    <?php endif;\n\t}\n}\t\necho '<\/div>';\n?>\n<?php \n\/\/ $ID = get_the_ID();\n\/\/echo $ID;\n\/\/$children = get_pages( array( 'child_of' => $ID, 'post_type' => 'resource', ) );\n\/\/if (!$children) { \n  getPrevNext();\n\/\/ }\nwp_reset_postdata();\n?>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 2077,
+        "title": "TOC",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/toc",
+        "description": "",
+        "category": "theme",
+        "category_label": "theme",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<!-- \/\/ https:\/\/unicorntears.dev\/posts\/easily-add-a-table-of-contents-to-any-post-without-a-plugin-in-wordpress\/ <\/-->\n  <?php\n  $content = get_the_content();\n  preg_match_all('\/<(h\\d*)(?: id=\"(.*?)\")?>((.*?))<\/',$content,$matches);\n  $levels = $matches[1];\n  $anchors = $matches[2];\n  $headings = $matches[3];\n  if ( $headings ) {\n      echo '<nav class=\"toc-block\"><span class=\"toc-header\">On this Page<\/span><div class=\"toc\"><\/div><\/nav>';\n      \n      }\n  ?>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 2075,
+        "title": "Section Children",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n<rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/section-children",
+        "description": "",
+        "category": "theme",
+        "category_label": "theme",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<?php\nglobal $post;\n$args = array(\n    'post_type'      => 'page',\n    'posts_per_page' => -1,\n    'post_parent'    => $post->ID,\n    'order'          => 'ASC',\n    'orderby'        => 'menu_order'\n ); \n\n$parent = new WP_Query( $args );\n\n\n?>\n<nav class=\"section-contents\">\n<ul class=\"parent-page\">\n\n<?php if ( $parent->have_posts() ) : ?>\n    <?php while ( $parent->have_posts() ) : $parent->the_post(); \n    $children = get_pages('child_of='.$post->ID);\n    $count = count($children);?>    \n    <li><a href=\"<?php the_permalink(); ?>\" title=\"<?php the_title(); ?>\"><?php the_title(); ?><\/a>\n      <?php if( count( $children ) != 0 ): ?>\n        <span class=\"child-count\"> <?php echo $count ?><\/span>\n       <?php endif; ?>\n      <?php if ( ! has_excerpt() ) :\n      echo '';  \n      else: ?>\n        <p class=\"entry-subtitle\"><?php echo get_the_excerpt(); ?><\/p>\n      <?php endif; ?><\/li>\n    <?php endwhile; ?>\n\n<?php endif; wp_reset_postdata(); ?>\n\n<\/nav>\n<\/ul>\n<?php\nfunction new_excerpt_more( $more ) {\n    return '';\n}\nadd_filter('excerpt_more', 'new_excerpt_more');\n\n?>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 2074,
+        "title": "In this Section Block",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n<rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/in-this-section",
+        "description": "",
+        "category": "theme",
+        "category_label": "theme",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<nav class=\"in-this-section\">\n<?php\nfunction wpb_list_child_pages() {\n\nglobal $post;\n$parent = get_the_title( $post->post_parent );\n$linkToParent = get_permalink($post->post_parent);\n\nif ( $post->post_parent )\n$childpages = wp_list_pages( 'sort_column=menu_order&depth=1&title_li=&child_of=' . $post->post_parent . '&echo=0' );\nelse\n$childpages = wp_list_pages( 'sort_column=menu_order&depth=1&title_li=&child_of=' . $post->ID . '&echo=0' );\n\nif ( $childpages ) {\n\n$string = '' . $childpages . ''; \n\/\/ echo '<span>< Back to <a href=\" ' . $linkToParent . '\"> ' . $parent . '<\/a><\/\/h2>';\necho '<h2>In this Section<\/h2>';\n}\n\necho $string;\n\n}\n?>\n\t\n<?php wpb_list_child_pages(); ?>\n<\/nav>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    },
+    {
+        "id": 2073,
+        "title": "Copy Permanent URL",
+        "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z\" \/><\/svg>",
+        "keywords": [],
+        "slug": "lazyblock\/shorturl",
+        "description": "",
+        "category": "widgets",
+        "category_label": "widgets",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": [],
+        "code": {
+            "output_method": "php",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "<?php \n$postID = get_queried_object_id();\n echo '<div class=\"shortlink\"> <input type=\"hidden\" value=\"'. site_url() .'?p=' . $postID . '\" id=\"short_url\" maxlength=\"30\" size=\"30\" ><button class=\"copy-short-link\" data-clipboard-target=\"#short_url\">\nCopy Permanent URL<\/button><\/div>' ;\n?>",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": true
+        },
+        "condition": []
+    }
+]
