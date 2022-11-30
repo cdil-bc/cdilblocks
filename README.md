@@ -1,4 +1,4 @@
-# CDILblocks Wordpress Theme
+# CDIL-blocks Wordpress Theme
 
 A [block-based theme](https://developer.wordpress.org/themes/block-themes/) developed by Tim Lindgren for the [Center for Digital Innovation in Learning - Boston College](https://www.bc.edu/content/bc-web/academics/sites/cdil.html) at Boston College. 
 
