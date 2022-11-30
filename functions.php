@@ -118,7 +118,7 @@ function cdilblocks_register_block_styles() {
 
 	$block_styles = array(
 		'core/image'            => array(
-			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+			'plain' => __( 'Plain', 'cdilblocks' ),
 		),
 		'core/group'            => array(
 			'shadow' => __( 'Shadow', 'cdilblocks' ),
@@ -132,7 +132,7 @@ function cdilblocks_register_block_styles() {
 		),
 
 		'core/embed'            => array(
-			'shadow-lg' => __( 'Shadow-Large', 'cdilblocks' ),
+			'plain' => __( 'Plain', 'cdilblocks' ),
 		),
 	);
 
