@@ -134,6 +134,14 @@ function cdilblocks_register_block_styles() {
 		'core/embed'            => array(
 			'plain' => __( 'Plain', 'cdilblocks' ),
 		),
+		'core/paragraph'            => array(
+			'intro-box' => __( 'Introduction Box', 'cdilblocks' ),
+			'highlight-box' => __( 'Highlight Box', 'cdilblocks' ),
+			'callout-info' => __( 'Info', 'cdilblocks' ),
+			'callout-success' => __( 'Success', 'cdilblocks' ),
+			'callout-warning' => __( 'Warning', 'cdilblocks' ),
+			'callout-danger' => __( 'Danger', 'cdilblocks' ),
+		),
 	);
 
 	foreach ( $block_styles as $block => $styles ) {
