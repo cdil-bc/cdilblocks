@@ -29,6 +29,7 @@
 .toc >.toc-list li {
     list-style: none;
     display: flex;
+    flex-direction:column;
     line-height: 1.7;
 }
 

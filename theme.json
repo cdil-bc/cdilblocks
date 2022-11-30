@@ -660,6 +660,11 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
+		},
+		{
+			"area": "footer",
+			"name": "footer-minimal",
+			"title": "Footer Minimal"
 		}
 	],
 	"version": 2,
