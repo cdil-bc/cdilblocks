@@ -34,7 +34,7 @@
             "editor_html": "",
             "editor_callback": "",
             "editor_css": "",
-            "frontend_html": "<?php \n$postID = get_queried_object_id();\n?>\n<a class=\"edit-link\" href=\"<?php echo get_edit_post_link( $postID, $context ); ?>\">Edit<\/a>\n\n",
+            "frontend_html": "<?php \nedit_post_link( __( 'Edit', 'textdomain' ), '<p>', '<\/p>', null, 'edit-link' );\n?>\n\n",
             "frontend_callback": "",
             "frontend_css": "",
             "show_preview": "always",
