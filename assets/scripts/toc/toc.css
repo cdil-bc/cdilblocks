@@ -21,12 +21,12 @@
     padding-top: .5rem;
 }
 
-.toc>.toc-list {
+.toc >.toc-list {
     overflow: hidden;
     position: relative
 }
 
-.toc>.toc-list li {
+.toc >.toc-list li {
     list-style: none;
     display: flex;
     line-height: 1.7;
