@@ -251,7 +251,7 @@ p.is-style-callout-danger {
 }
 
 .wp-block-group.is-style-callout-danger:before,
-p.is-style-callout-danger {
+p.is-style-callout-danger:before {
 	background-color:var(--wp--preset--color--red);
 	-webkit-mask-image: url(/wp-content/themes/cdil-blocks/assets/icons/danger.svg);
 	mask-image: url(/wp-content/themes/cdil-blocks/assets/icons/danger.svg);
