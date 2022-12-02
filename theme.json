@@ -29,6 +29,13 @@
 				"page"
 			],
 			"title": "Parent Page"
+		},
+		{
+			"name": "sfwd-courses-full",
+			"postTypes": [
+				"sfwd-courses"
+			],
+			"title": "Course Page Full"
 		}
 	],
 	"settings": {
