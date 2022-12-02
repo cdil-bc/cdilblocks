@@ -94,14 +94,11 @@ function cdilblocks_register_block_pattern_categories() {
 			'label'         => __( 'Header', 'cdilblocks' ),
 			'categoryTypes' => array( 'cdilblocks' ),
 		),
-		'cdilblocks-casestudy'    => array(
-			'label'         => __( 'Case Studies', 'cdilblocks' ),
+		'cdilblocks-sidebar'    => array(
+			'label'         => __( 'Sidebar', 'cdilblocks' ),
 			'categoryTypes' => array( 'cdilblocks' ),
 		),
-		'cdilblocks-query'   => array(
-			'label'         => __( 'Query', 'cdilblocks' ),
-			'categoryTypes' => array( 'cdilblocks' ),
-		),
+
 	);
 
 	foreach ( $block_pattern_categories as $name => $properties ) {

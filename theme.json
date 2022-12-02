@@ -665,6 +665,11 @@
 			"area": "footer",
 			"name": "footer-minimal",
 			"title": "Footer Minimal"
+		},
+		{
+			"area": "general",
+			"name": "sidebar",
+			"title": "Sidebar"
 		}
 	],
 	"version": 2,
