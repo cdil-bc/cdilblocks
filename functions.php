@@ -189,12 +189,26 @@ function add_theme_scripts() {
 	wp_enqueue_script('clipboard-init', get_stylesheet_directory_uri().'/assets/scripts/clipboard/clipboard-init.js', 
     array(), false, true);
 
+	wp_enqueue_style( 'learndash-css', get_template_directory_uri() . '/assets/css/learndash.css', array(), '1.1', 'all');
+
 	//   if ( is_singular() ) {
 	// 	wp_enqueue_script( 'comment-reply' );
 	//   }
   }
   add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+// Add class to override Learndash classes when using !important
+  function custom_classes($classes) {
+    // add 'class-name' to the $classes array
+    $classes[] = 'cdil-blocks';
+	$classes[] = 'css-priority';
+
+    // return the $classes array
+    return $classes;
+}
+ 
+//Now add test class to the filter
+add_filter('body_class','custom_classes');
 
 // Add ID to headings for TOC
 // Credits https://jeroensormani.com/automatically-add-ids-to-your-headings/

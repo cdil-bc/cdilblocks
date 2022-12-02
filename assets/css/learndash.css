@@ -1,0 +1,174 @@
+.learndash-wrapper .ld-button:hover:not(.learndash-link-previous-incomplete):not(.ld-button-transparent),
+#learndash-tooltips .ld-tooltip:after,
+#learndash-tooltips .ld-tooltip,
+.learndash-wrapper .ld-primary-background,
+.learndash-wrapper .btn-join,
+.learndash-wrapper #btn-join,
+.learndash-wrapper .ld-button:not(.ld-button-reverse):not(.learndash-link-previous-incomplete):not(.ld-button-transparent),
+.learndash-wrapper .ld-expand-button,
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button:not(.wpProQuiz_button_reShowQuestion):not(.wpProQuiz_button_restartQuiz),
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_button2,
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation-heading,
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-focus-sidebar-trigger,
+.learndash-wrapper .ld-focus-comments .form-submit #submit,
+.learndash-wrapper .ld-login-modal input[type='submit'],
+.learndash-wrapper .ld-login-modal .ld-login-modal-register,
+.learndash-wrapper .wpProQuiz_content .wpProQuiz_certificate a.btn-blue,
+.learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-user-menu-items a,
+#wpProQuiz_user_content table.wp-list-table thead th,
+#wpProQuiz_overlay_close,
+.learndash-wrapper .ld-expand-button.ld-button-alternate .ld-icon {
+    background-color: #003957 !important;
+    background-color: var(--wp--preset--color--secondary) !important;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar {
+    /* 	background-color:#F7F9FA */
+}
+
+.learndash-wrapper .ld-breadcrumbs a,
+.learndash-wrapper .ld-lesson-item.ld-is-current-lesson .ld-lesson-item-preview-heading,
+.learndash-wrapper .ld-lesson-item.ld-is-current-lesson .ld-lesson-title,
+.learndash-wrapper .ld-primary-color-hover:hover,
+.learndash-wrapper .ld-primary-color,
+.learndash-wrapper .ld-primary-color-hover:hover,
+.learndash-wrapper .ld-primary-color,
+.learndash-wrapper .ld-tabs .ld-tabs-navigation .ld-tab.ld-active,
+.learndash-wrapper .ld-button.ld-button-transparent,
+.learndash-wrapper .ld-button.ld-button-reverse,
+.learndash-wrapper .ld-icon-certificate,
+.learndash-wrapper .ld-login-modal .ld-login-modal-login .ld-modal-heading,
+#wpProQuiz_user_content a,
+.learndash-wrapper .ld-item-list .ld-item-list-item a.ld-item-name:hover,
+.learndash-wrapper .ld-focus-comments__heading-actions .ld-expand-button,
+.learndash-wrapper .ld-focus-comments__heading a,
+.learndash-wrapper .ld-focus-comments .comment-respond a,
+.learndash-wrapper .ld-focus-comment .ld-comment-reply a.comment-reply-link:hover,
+.learndash-wrapper .ld-expand-button.ld-button-alternate {
+    color: var(--wp--preset--color--secondary) !important;
+}
+
+.learndash-wrapper .ld-button {
+    border-radius: .5rem;
+}
+
+.learndash-wrapper #learndash_mark_complete_button,
+.learndash-wrapper .learndash_mark_complete_button {
+    border-radius: .5rem;
+    background-color: #0b874b !important;
+    background-color: var(--wp--preset--color--green-bright) !important;
+}
+
+/* Back to Lesson */
+.learndash-wrapper .ld-content-actions .ld-content-action .ld-course-step-back {
+    margin-top: 1rem
+}
+
+/* Logo */
+.learndash-wrapper .ld-focus .ld-focus-header .ld-brand-logo {
+    background-color: var(--wp--preset--color--red) !important;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-header .ld-brand-logo img {
+    max-height: 1.25rem;
+}
+
+/* Course Name Box */
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation-heading,
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-focus-sidebar-trigger {
+    background-color: var(--wp--preset--color--primary) !important;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-lesson-item {
+    background-color: transparent;
+    border: none;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-lesson-item.ld-is-not-current-lesson {
+    border-left: 7px solid transparent;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-lesson-item.ld-is-current-lesson {
+    background-color: #f0f3f6;
+    border: none;
+    border-left: 7px solid var(--wp--preset--color--primary)
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-is-current-lesson.ld-lesson-item .ld-lesson-item-preview {
+    margin-top: .75rem;
+    border-bottom: none !important
+}
+
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-topic-list.ld-table-list:before {
+    background-color: transparent;
+}
+
+/* Topic List */
+.learndash-wrapper .ld-focus .ld-focus-sidebar .ld-course-navigation .ld-topic-list.ld-table-list {
+    padding: 0em 1rem .5rem 1rem;
+    background-color: transparent;
+    position: relative;
+    margin-top: -1rem;
+}
+
+.learndash-wrapper .ld-expand-button {
+    font-weight: normal;
+    font-size: .8rem;
+}
+
+/* Round check icons in sidebar */
+.learndash-wrapper .ld-course-navigation .ld-status-icon {
+    border: 0;
+    flex: 0 0 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 0.1em;
+    text-align: center;
+    width: 20px;
+    font-size: .8rem;
+}
+
+.learndash-wrapper .ld-course-navigation .ld-lesson-item-preview .ld-expand-button {
+    padding-top: 1rem;
+}
+
+.learndash-wrapper .ld-course-navigation .ld-lesson-item-preview .ld-expand-button .ld-icon {
+    background-color: transparent !important;
+    color: #000;
+}
+
+
+
+/* highlight active topic */
+.learndash-wrapper .ld-course-navigation .ld-lesson-item.ld-is-current-lesson .ld-lesson-title,
+.learndash-wrapper .ld-course-navigation .ld-table-list.ld-topic-list .ld-table-list-item .ld-table-list-item-preview.ld-is-current-item .ld-topic-title {
+    font-weight: bold;
+    color: #000 !important;
+}
+
+.learndash-wrapper .ld-table-list .ld-table-list-header {
+    background-color: var(--wp--preset--color--primary) !important;
+}
+
+/* Complete button  */
+.learndash-wrapper .ld-status {
+    margin-bottom: 0;
+}
+
+
+/* remove border above page nav */
+.learndash-wrapper .ld-content-actions {
+    border: none;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu {
+    padding-left: 1rem;
+}
+
+.learndash-wrapper .ld-focus .ld-focus-header .ld-user-menu .ld-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 150px;
+}
