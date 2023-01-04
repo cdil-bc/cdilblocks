@@ -261,7 +261,7 @@
 			},
 			"spacing": {
 				"large": "min(6rem, 10vw)",
-				"medium": "calc(3 * var(--wp--custom--spacing--small))",
+				"medium": "calc(1.5 * var(--wp--custom--spacing--small))",
 				"outer": "2rem",
 				"small": "min(2rem, 3.5vw)"
 			},
@@ -516,8 +516,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"bottom": "var(--wp--custom--spacing--large) !important",
-						"top": "var(--wp--custom--spacing--large) !important"
+						"bottom": "var(--wp--custom--spacing--small) !important",
+						"top": "var(--wp--custom--spacing--small) !important"
 					}
 				}
 			},
@@ -560,8 +560,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"bottom": "var(--wp--custom--spacing--large) !important",
-						"top": "var(--wp--custom--spacing--large) !important"
+						"bottom": "var(--wp--custom--spacing--medium) !important",
+						"top": "var(--wp--custom--spacing--medium) !important"
 					}
 				}
 			},
