@@ -560,8 +560,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"bottom": "var(--wp--custom--spacing--medium) !important",
-						"top": "var(--wp--custom--spacing--medium) !important"
+						"bottom": "var(--wp--custom--spacing--small) !important",
+						"top": "var(--wp--custom--spacing--small) !important"
 					}
 				}
 			},
